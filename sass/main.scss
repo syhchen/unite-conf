@@ -1,0 +1,124 @@
+@import 'compass/reset';
+@import "compass/css3";
+
+$background: #4577bb;
+$body-color: #fff;
+$highlight-color: #fa8c7c;
+
+$nav-height: 120px;
+$nav-padding: 40px;
+
+$button-background: #eb6149;
+$button-shadow: #d04632;
+$button-padding: 20px;
+$button-radius: 10px;
+
+.button {
+    padding: 0 $button-padding;
+    border-radius: $button-radius;
+    box-shadow: 0 5px 0 $button-shadow;
+    background: $button-background;
+    color: $body-color;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+/* General */
+html, body {
+    width: 100%; height: 100%;
+}
+
+body {
+    background: $background;
+    color: $body-color;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* Background */
+.goldengate {
+    width: 100%; height: 60%;
+    position: absolute;
+    bottom: 0;
+    background-image: url('../img/goldengate-cropped.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+.fog {
+
+}
+
+/* Nav */
+.nav {
+    z-index: 2;
+    width: 100%; height: $nav-height;
+    padding: 0 $nav-padding;
+    position: absolute;
+    box-sizing: border-box;
+    line-height: $nav-height;
+
+    * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    img {
+        height: $nav-height/2;
+    }
+
+    li {
+        margin-left: $nav-padding;
+
+        a {
+            color: $body-color;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            line-height: 18px;
+        }
+    }
+
+    .cta {
+        @extend .button;
+
+        height: $nav-height/2;
+        position: absolute;
+        right: $nav-padding; top: $nav-height*1/4;
+        font-size: 18px;
+        line-height: $nav-height/2;
+    }
+}
+
+/* Content */
+.content {
+    z-index: 1;
+    width: 100%; height: 100%;
+    position: relative;
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+
+    .blurb {
+        width: 480px;
+        text-align: center;
+
+        img {
+            width: 40%;
+        }
+        p {
+            padding-top: 40px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: 0.05em;
+
+            .highlight {
+                color: $highlight-color;
+                font-weight: 600;
+            }
+        }
+    }
+}
