@@ -1,17 +1,24 @@
 @import 'compass/reset';
 @import "compass/css3";
 
+@font-face {
+  font-family: 'Gidole';
+  src: url('../fonts/Gidole-Regular.ttf') format('truetype');
+}
+
 $background: #4577bb;
 $body-color: #fff;
 $highlight-color: #fa8c7c;
 
 $nav-height: 120px;
-$nav-padding: 40px;
+$nav-padding: 50px;
 
 $button-background: #eb6149;
 $button-shadow: #d04632;
-$button-padding: 20px;
+$button-padding: 24px;
 $button-radius: 10px;
+
+$blurb-width: 480px;
 
 .button {
     padding: 0 $button-padding;
@@ -26,12 +33,13 @@ $button-radius: 10px;
 /* General */
 html, body {
     width: 100%; height: 100%;
+    min-width: $blurb-width + 40px;
 }
 
 body {
     background: $background;
     color: $body-color;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Gidole, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 /* Background */
@@ -80,18 +88,19 @@ body {
     }
 
     img {
-        height: $nav-height/2;
+        height: $nav-height/4;
     }
 
     li {
         margin-left: $nav-padding;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 
         a {
             color: $body-color;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.24em;
             text-decoration: none;
             line-height: 18px;
         }
@@ -102,7 +111,7 @@ body {
 
         height: $nav-height/2;
         position: absolute;
-        right: $nav-padding; top: $nav-height*1/4;
+        right: $nav-padding; top: $nav-height/4;
         font-size: 18px;
         line-height: $nav-height/2;
     }
@@ -118,7 +127,7 @@ body {
     @include justify-content(center);
 
     .blurb {
-        width: 480px;
+        width: $blurb-width;
         text-align: center;
 
         img {
@@ -127,13 +136,13 @@ body {
         p {
             padding-top: 40px;
             font-size: 20px;
-            font-weight: 400;
+            // font-weight: 400;
             line-height: 28px;
             letter-spacing: 0.05em;
 
             .highlight {
                 color: $highlight-color;
-                font-weight: 600;
+                // font-weight: 600;
             }
         }
     }
