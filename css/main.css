@@ -67,52 +67,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'Gidole';
   src: url("../fonts/Gidole-Regular.ttf") format("truetype");
 }
-@media only screen and (max-width: 480px) {
-  /* line 26, ../sass/main.scss */
-  body .content .blurb {
-    max-width: 320px;
-  }
-  /* line 29, ../sass/main.scss */
-  body .content .blurb img {
-    width: 118px;
-  }
-  /* line 32, ../sass/main.scss */
-  body .content .blurb p {
-    font-size: 16px;
-    line-height: 22px;
-  }
-}
-@media only screen and (max-width: 678px) and (min-width: 480px) {
-  /* line 44, ../sass/main.scss */
+@media only screen and (max-width: 678px) {
+  /* line 45, ../sass/main.scss */
   body .content .blurb {
     max-width: 360px;
   }
-  /* line 47, ../sass/main.scss */
+  /* line 48, ../sass/main.scss */
   body .content .blurb img {
     width: 128px;
   }
-  /* line 50, ../sass/main.scss */
+  /* line 51, ../sass/main.scss */
   body .content .blurb p {
     font-size: 18px;
     line-height: 24px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 678px) {
-  /* line 62, ../sass/main.scss */
+  /* line 63, ../sass/main.scss */
   body .content .blurb {
     max-width: 400px;
   }
-  /* line 65, ../sass/main.scss */
+  /* line 66, ../sass/main.scss */
   body .content .blurb img {
     width: 132px;
   }
-  /* line 68, ../sass/main.scss */
+  /* line 69, ../sass/main.scss */
   body .content .blurb p {
     font-size: 20px;
     line-height: 26px;
   }
 }
-/* line 77, ../sass/main.scss */
+/* line 78, ../sass/main.scss */
 .button, .nav .cta {
   padding: 0 24px;
   border-radius: 10px;
@@ -124,20 +109,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* General */
-/* line 88, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 html, body {
   width: 100%;
   height: 100%;
 }
 
-/* line 92, ../sass/main.scss */
+/* line 93, ../sass/main.scss */
 body {
   background: #4577bb;
   color: #fff;
   font-family: Gidole, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-/* line 98, ../sass/main.scss */
+/* line 99, ../sass/main.scss */
 .loading {
   position: absolute;
   top: 0;
@@ -149,10 +134,10 @@ body {
 }
 
 /* Background */
-/* line 106, ../sass/main.scss */
+/* line 107, ../sass/main.scss */
 .goldengate {
-  width: 48%;
-  height: 60%;
+  width: 46%;
+  height: 58%;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -162,7 +147,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 116, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 .fog-left {
   width: 42%;
   height: 16%;
@@ -175,7 +160,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 126, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 .fog-right {
   width: 46%;
   height: 16%;
@@ -189,7 +174,7 @@ body {
 }
 
 /* Nav */
-/* line 137, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 .nav {
   z-index: 2;
   width: 100%;
@@ -199,21 +184,21 @@ body {
   box-sizing: border-box;
   line-height: 120px;
 }
-/* line 145, ../sass/main.scss */
+/* line 146, ../sass/main.scss */
 .nav * {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 150, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .nav img {
   height: 30px;
 }
-/* line 154, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 .nav li {
   margin-left: 25px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-/* line 158, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 .nav li a {
   color: #fff;
   font-size: 18px;
@@ -223,7 +208,7 @@ body {
   text-decoration: none;
   line-height: 18px;
 }
-/* line 169, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 .nav .countdown {
   padding-left: 16.66667px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -234,7 +219,7 @@ body {
   position: absolute;
   top: 0;
 }
-/* line 179, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
 .nav .countdown .time-unit {
   width: 58px;
   margin-top: 32px;
@@ -242,13 +227,13 @@ body {
   display: inline-block;
   line-height: 48px;
 }
-/* line 189, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 .nav .countdown .time-unit .value, .nav .countdown .time-unit .label {
   padding-left: 1px;
   display: block;
   letter-spacing: 2px;
 }
-/* line 195, ../sass/main.scss */
+/* line 196, ../sass/main.scss */
 .nav .countdown .time-unit .value {
   border-radius: 6px;
   font-weight: 600;
@@ -256,12 +241,12 @@ body {
   background: #fff;
   color: #4577bb;
 }
-/* line 202, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 .nav .countdown .time-unit .label {
   font-size: 12px;
   line-height: 32px;
 }
-/* line 209, ../sass/main.scss */
+/* line 210, ../sass/main.scss */
 .nav .cta {
   height: 60px;
   position: absolute;
@@ -272,7 +257,7 @@ body {
 }
 
 /* Content */
-/* line 221, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
 .content {
   z-index: 1;
   width: 100%;
@@ -291,25 +276,25 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 232, ../sass/main.scss */
+/* line 233, ../sass/main.scss */
 .content .blurb {
   width: 100%;
   padding: 0 25px 5px 25px;
   max-width: 480px;
   text-align: center;
 }
-/* line 238, ../sass/main.scss */
+/* line 239, ../sass/main.scss */
 .content .blurb img {
   width: 148px;
 }
-/* line 242, ../sass/main.scss */
+/* line 243, ../sass/main.scss */
 .content .blurb p {
   padding-top: 40px;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.05em;
 }
-/* line 249, ../sass/main.scss */
+/* line 250, ../sass/main.scss */
 .content .blurb p .highlight {
   color: #fa8c7c;
 }
