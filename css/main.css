@@ -194,7 +194,7 @@ body {
   z-index: 2;
   width: 100%;
   height: 120px;
-  padding: 0 30px;
+  padding: 0 25px;
   position: absolute;
   box-sizing: border-box;
   line-height: 120px;
@@ -210,7 +210,7 @@ body {
 }
 /* line 154, ../sass/main.scss */
 .nav li {
-  margin-left: 30px;
+  margin-left: 25px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 /* line 158, ../sass/main.scss */
@@ -225,7 +225,7 @@ body {
 }
 /* line 169, ../sass/main.scss */
 .nav .countdown {
-  padding-left: 20px;
+  padding-left: 16.66667px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 0;
   text-align: center;
@@ -265,7 +265,7 @@ body {
 .nav .cta {
   height: 60px;
   position: absolute;
-  right: 30px;
+  right: 25px;
   top: 30px;
   font-size: 18px;
   line-height: 60px;
@@ -294,7 +294,7 @@ body {
 /* line 232, ../sass/main.scss */
 .content .blurb {
   width: 100%;
-  padding: 0 30px 5px 30px;
+  padding: 0 25px 5px 25px;
   max-width: 480px;
   text-align: center;
 }
