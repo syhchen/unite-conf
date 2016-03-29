@@ -144,6 +144,7 @@ body {
     position: absolute;
     box-sizing: border-box;
     line-height: $nav-height;
+    overflow-x: hidden;
 
     * {
         display: inline-block;
