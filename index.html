@@ -28,7 +28,7 @@
 
                     $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
                     $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
-                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN) + 1);
 
                     if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
                     this.timeLeft--;
