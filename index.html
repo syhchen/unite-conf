@@ -11,9 +11,10 @@
         <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
         <script type="text/javascript">
             var SEC_IN_MIN = 60; // in sec
-            var SEC_IN_DAY = SEC_IN_MIN*60*24; // in sec
+            var SEC_IN_HOUR = this.SEC_IN_MIN*60; // in sec
+            var SEC_IN_DAY = this.SEC_IN_HOUR*24; // in sec
             var REFRESH = 1; // in sec
-            var FADE = 0; // in sec
+            var FADE = 0.3; // in sec
 
             var timeLeft = Math.abs(new Date(2016, 6, 17) - new Date()) / 1000; // in sec
             if(timeLeft < 0) {
@@ -21,9 +22,13 @@
             }
             else {
                 (function renderLoop(){
+                    // $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                    // $("#min").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_MIN));
+                    // $("#sec").html(Math.floor((this.timeLeft%this.SEC_IN_MIN)));
+
                     $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
-                    $("#min").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_MIN));
-                    $("#sec").html(Math.floor((this.timeLeft%this.SEC_IN_MIN)));
+                    $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
+                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
 
                     if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
                     this.timeLeft--;
@@ -45,12 +50,12 @@
                     <div class="label">Days</div>
                 </div>
                 <div class="time-unit">
-                    <div class="value" id="min">0</div>
-                    <div class="label">Min</div>
+                    <div class="value" id="hrs">0</div>
+                    <div class="label">Hrs</div>
                 </div>
                 <div class="time-unit">
-                    <div class="value" id="sec">0</div>
-                    <div class="label">Sec</div>
+                    <div class="value" id="min">0</div>
+                    <div class="label">Min</div>
                 </div>
             </div>
             <!-- <ul>

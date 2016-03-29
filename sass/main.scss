@@ -46,11 +46,12 @@ $blurb-width: 480px;
                 max-width: $blurb-width - 120px;
 
                 img {
-                    width: 128px;
+                    width: 124px;
                 }
                 p {
                     font-size: 18px;
                     line-height: 24px;
+                    letter-spacing: 0.09em;
                 }
             }
         }
@@ -99,7 +100,7 @@ body {
 .loading {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: white;
+    background: $background;
     z-index: 999;
 }
 
@@ -232,7 +233,8 @@ body {
 
     .blurb {
         width: 100%;
-        padding: 0 $nav-padding 5px $nav-padding;
+        // padding: 0 $nav-padding;
+        padding: $nav-height/6 $nav-padding 0 $nav-padding;
         max-width: $blurb-width;
         text-align: center;
 
