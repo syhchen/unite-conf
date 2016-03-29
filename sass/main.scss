@@ -18,7 +18,61 @@ $button-shadow: #d04632;
 $button-padding: 24px;
 $button-radius: 10px;
 
-$blurb-width: 400px;
+$blurb-width: 480px;
+
+@media only screen and (max-width: 480px) {
+    body {
+        .content {
+            .blurb {
+                max-width: $blurb-width - 160px;
+
+                img {
+                    width: 118px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 678px) and (min-width: 480px) {
+    body {
+        .content {
+            .blurb {
+                max-width: $blurb-width - 120px;
+
+                img {
+                    width: 128px;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 678px) {
+    body {
+        .content {
+            .blurb {
+                max-width: $blurb-width - 80px;
+
+                img {
+                    width: 132px;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
 
 .button {
     padding: 0 $button-padding;
@@ -33,7 +87,6 @@ $blurb-width: 400px;
 /* General */
 html, body {
     width: 100%; height: 100%;
-    min-width: $blurb-width;
 }
 
 body {
@@ -106,6 +159,46 @@ body {
         }
     }
 
+    .countdown {
+        padding-left: $nav-padding*2/3;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 0;
+        text-align: center;
+        text-transform: uppercase;
+        overflow-x: hidden;
+        position: absolute;
+        top: 0;
+
+        .time-unit {
+            $label-spacing: 2px;
+            $label-height: 32px;
+
+            width: 58px;
+            margin-top: $label-height;
+            margin-right: 8px;
+            display: inline-block;
+            line-height: 48px;
+
+            .value, .label {
+                padding-left: $label-spacing/2;
+                display: block;
+                letter-spacing: $label-spacing;
+            }
+
+            .value {
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 20px;
+                background: $body-color;
+                color: $background;
+            }
+            .label {
+                font-size: 12px;
+                line-height: $label-height;
+            }
+        }
+    }
+
     .cta {
         @extend .button;
 
@@ -128,18 +221,19 @@ body {
 
     .blurb {
         width: 100%;
-        padding: 0 $nav-padding 10px $nav-padding;
+        padding: 0 $nav-padding 5px $nav-padding;
         max-width: $blurb-width;
         text-align: center;
 
         img {
-            width: 32%;
+            width: 148px;
+            // width: 32%;
         }
         p {
             padding-top: 40px;
-            font-size: 18px;
+            font-size: 24px;
             // font-weight: 400;
-            line-height: 28px;
+            line-height: 30px;
             letter-spacing: 0.05em;
 
             .highlight {
