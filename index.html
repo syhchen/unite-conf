@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>UNITE 2016</title>
-        <meta name="description" content="A pretty cool conference.">
-        <meta name="keywords" content="Spark SC, Unite, Entrepreneurship">
+        <meta name="description" content="A two day conference in San Francisco where top collegiate entrepreneurial organizations from across the nation gather to collaborate and learn.">
+        <meta name="keywords" content="Spark SC, USC, Unite, UniteConf, Entrepreneurship">
         <link rel="icon" href="favicon.ico">
         <link href="css/main.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
@@ -18,15 +18,11 @@
 
             var timeLeft = Math.abs(new Date(2016, 6, 17) - new Date()) / 1000; // in sec
             if(timeLeft < 0) {
-                // it's the day of the event! hopefully the page still doesn't have a countdown. ;)
+                // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
             }
             else {
                 this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
                 (function renderLoop(){
-                    // $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
-                    // $("#min").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_MIN));
-                    // $("#sec").html(Math.floor((this.timeLeft%this.SEC_IN_MIN)));
-
                     $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
                     $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
                     $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
