@@ -80,7 +80,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   body .content .blurb p {
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: 0.09em;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 678px) {
@@ -290,7 +289,7 @@ body {
 }
 /* line 245, ../sass/main.scss */
 .content .blurb p {
-  padding-top: 40px;
+  padding-top: 30px;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.05em;
