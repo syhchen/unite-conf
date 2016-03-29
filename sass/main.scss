@@ -11,14 +11,14 @@ $body-color: #fff;
 $highlight-color: #fa8c7c;
 
 $nav-height: 120px;
-$nav-padding: 50px;
+$nav-padding: 30px;
 
 $button-background: #eb6149;
 $button-shadow: #d04632;
 $button-padding: 24px;
 $button-radius: 10px;
 
-$blurb-width: 480px;
+$blurb-width: 400px;
 
 .button {
     padding: 0 $button-padding;
@@ -33,7 +33,7 @@ $blurb-width: 480px;
 /* General */
 html, body {
     width: 100%; height: 100%;
-    min-width: $blurb-width + 40px;
+    min-width: $blurb-width;
 }
 
 body {
@@ -44,9 +44,9 @@ body {
 
 /* Background */
 .goldengate {
-    width: 100%; height: 64%;
+    width: 48%; height: 60%;
     position: absolute;
-    bottom: 0;
+    right: 0; bottom: 0;
     background-image: url('../img/goldengate-cropped.png');
     background-size: contain;
     background-position: right bottom;
@@ -54,7 +54,7 @@ body {
 }
 
 .fog-left {
-    width: 42%; height: 18%;
+    width: 42%; height: 16%;
     position: absolute;
     left: 0; bottom: 0;
     background-image: url('../img/fog-left-cropped.png');
@@ -64,7 +64,7 @@ body {
 }
 
 .fog-right {
-    width: 46%; height: 18%;
+    width: 46%; height: 16%;
     position: absolute;
     right: 0; bottom: 0;
     background-image: url('../img/fog-right-cropped.png');
@@ -127,15 +127,17 @@ body {
     @include justify-content(center);
 
     .blurb {
-        width: $blurb-width;
+        width: 100%;
+        padding: 0 $nav-padding 10px $nav-padding;
+        max-width: $blurb-width;
         text-align: center;
 
         img {
-            width: 36%;
+            width: 32%;
         }
         p {
             padding-top: 40px;
-            font-size: 20px;
+            font-size: 18px;
             // font-weight: 400;
             line-height: 28px;
             letter-spacing: 0.05em;
