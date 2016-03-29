@@ -21,7 +21,7 @@
                 // it's the day of the event! hopefully the page still doesn't have a countdown. ;)
             }
             else {
-                this.timeLeft + 60; // account for rounding caused by Math.floor()
+                this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
                 (function renderLoop(){
                     // $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
                     // $("#min").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_MIN));
