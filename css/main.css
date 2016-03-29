@@ -1,0 +1,308 @@
+/* line 5, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'Gidole';
+  src: url("../fonts/Gidole-Regular.ttf") format("truetype");
+}
+@media only screen and (max-width: 480px) {
+  /* line 26, ../sass/main.scss */
+  body .content .blurb {
+    max-width: 320px;
+  }
+  /* line 29, ../sass/main.scss */
+  body .content .blurb img {
+    width: 118px;
+  }
+  /* line 32, ../sass/main.scss */
+  body .content .blurb p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media only screen and (max-width: 678px) and (min-width: 480px) {
+  /* line 44, ../sass/main.scss */
+  body .content .blurb {
+    max-width: 360px;
+  }
+  /* line 47, ../sass/main.scss */
+  body .content .blurb img {
+    width: 128px;
+  }
+  /* line 50, ../sass/main.scss */
+  body .content .blurb p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 678px) {
+  /* line 62, ../sass/main.scss */
+  body .content .blurb {
+    max-width: 400px;
+  }
+  /* line 65, ../sass/main.scss */
+  body .content .blurb img {
+    width: 132px;
+  }
+  /* line 68, ../sass/main.scss */
+  body .content .blurb p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+/* line 77, ../sass/main.scss */
+.button, .nav .cta {
+  padding: 0 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 #d04632;
+  background: #eb6149;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+/* General */
+/* line 88, ../sass/main.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 92, ../sass/main.scss */
+body {
+  background: #4577bb;
+  color: #fff;
+  font-family: Gidole, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* line 98, ../sass/main.scss */
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 999;
+}
+
+/* Background */
+/* line 106, ../sass/main.scss */
+.goldengate {
+  width: 48%;
+  height: 60%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/goldengate-cropped.png");
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+/* line 116, ../sass/main.scss */
+.fog-left {
+  width: 42%;
+  height: 16%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url("../img/fog-left-cropped.png");
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+/* line 126, ../sass/main.scss */
+.fog-right {
+  width: 46%;
+  height: 16%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/fog-right-cropped.png");
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+/* Nav */
+/* line 137, ../sass/main.scss */
+.nav {
+  z-index: 2;
+  width: 100%;
+  height: 120px;
+  padding: 0 30px;
+  position: absolute;
+  box-sizing: border-box;
+  line-height: 120px;
+}
+/* line 145, ../sass/main.scss */
+.nav * {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 150, ../sass/main.scss */
+.nav img {
+  height: 30px;
+}
+/* line 154, ../sass/main.scss */
+.nav li {
+  margin-left: 30px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+/* line 158, ../sass/main.scss */
+.nav li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  text-decoration: none;
+  line-height: 18px;
+}
+/* line 169, ../sass/main.scss */
+.nav .countdown {
+  padding-left: 20px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 0;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+}
+/* line 179, ../sass/main.scss */
+.nav .countdown .time-unit {
+  width: 58px;
+  margin-top: 32px;
+  margin-right: 8px;
+  display: inline-block;
+  line-height: 48px;
+}
+/* line 189, ../sass/main.scss */
+.nav .countdown .time-unit .value, .nav .countdown .time-unit .label {
+  padding-left: 1px;
+  display: block;
+  letter-spacing: 2px;
+}
+/* line 195, ../sass/main.scss */
+.nav .countdown .time-unit .value {
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 20px;
+  background: #fff;
+  color: #4577bb;
+}
+/* line 202, ../sass/main.scss */
+.nav .countdown .time-unit .label {
+  font-size: 12px;
+  line-height: 32px;
+}
+/* line 209, ../sass/main.scss */
+.nav .cta {
+  height: 60px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+/* Content */
+/* line 221, ../sass/main.scss */
+.content {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 229, ../sass/main.scss */
+.content .blurb {
+  width: 100%;
+  padding: 0 30px 5px 30px;
+  max-width: 480px;
+  text-align: center;
+}
+/* line 235, ../sass/main.scss */
+.content .blurb img {
+  width: 148px;
+}
+/* line 239, ../sass/main.scss */
+.content .blurb p {
+  padding-top: 40px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+}
+/* line 246, ../sass/main.scss */
+.content .blurb p .highlight {
+  color: #fa8c7c;
+}

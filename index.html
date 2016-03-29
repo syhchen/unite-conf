@@ -8,24 +8,48 @@
         <meta name="keywords" content="Spark SC, Unite, Entrepreneurship">
         <link rel="icon" href="favicon.ico">
         <link href="css/main.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script type="text/javascript">
+            var SEC_IN_MIN = 60; // in sec
+            var SEC_IN_DAY = SEC_IN_MIN*60*24; // in sec
+            var REFRESH = 1; // in sec
+            var FADE = 0; // in sec
+
+            var timeLeft = Math.abs(new Date(2016, 6, 17) - new Date()) / 1000; // in sec
+            if(timeLeft < 0) {
+                // it's the day of the event! hopefully the page still doesn't have a countdown. ;)
+            }
+            else {
+                (function renderLoop(){
+                    $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                    $("#min").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_MIN));
+                    $("#sec").html(Math.floor((this.timeLeft%this.SEC_IN_MIN)));
+
+                    if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
+                    this.timeLeft--;
+                    setTimeout(renderLoop, this.REFRESH*1000);
+                })();
+            }
+        </script>
     </head>
     <body>
+        <div class="loading" id="loading"></div>
         <div class="goldengate"></div>
         <div class="fog-left"></div>
         <div class="fog-right"></div>
         <nav class="nav">
             <img src="img/unite-type.svg" alt="Unite">
-            <div class="countdown">
-                <div class="time-unit days">
-                    <div class="value">0</div>
+            <div class="countdown" id="countdown">
+                <div class="time-unit">
+                    <div class="value" id="days">0</div>
                     <div class="label">Days</div>
                 </div>
-                <div class="time-unit hours">
-                    <div class="value">0</div>
+                <div class="time-unit">
+                    <div class="value" id="min">0</div>
                     <div class="label">Min</div>
                 </div>
-                <div class="time-unit minutes">
-                    <div class="value">0</div>
+                <div class="time-unit">
+                    <div class="value" id="sec">0</div>
                     <div class="label">Sec</div>
                 </div>
             </div>
