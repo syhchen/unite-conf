@@ -1,9 +1,17 @@
 @import 'compass/reset';
 @import "compass/css3";
 
+// @font-face {
+//   font-family: 'Gidole';
+//   src: url('../fonts/Gidole-Regular.ttf') format('truetype');
+// }
 @font-face {
-  font-family: 'Gidole';
-  src: url('../fonts/Gidole-Regular.ttf') format('truetype');
+  font-family: 'Gotham';
+  src: url('../fonts/GOTHAM-LIGHT.TTF') format('truetype');
+}
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('../fonts/GOTHAM-BOLD.TTF') format('truetype');
 }
 
 $background: #4577bb;
@@ -30,7 +38,7 @@ $blurb-width: 480px;
 
                     .unit {
                         width: 17px;
-                        font-size: 12px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -49,12 +57,13 @@ $blurb-width: 480px;
                     font-size: 22px;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 16px;
                     line-height: 22px;
-                    // letter-spacing: 0.06em;
+                    letter-spacing: 0em;
                 }
                 .cta {
                     visibility: visible;
+                    letter-spacing: 0em;
                 }
             }
         }
@@ -98,7 +107,7 @@ body {
     position: relative;
     background: $background;
     color: $body-color;
-    font-family: Gidole, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .loading {
@@ -284,7 +293,7 @@ body {
         h1 {
             padding-top: 30px;
             font-size: 28px;
-            font-weight: 600;
+            font-family: Gotham Bold;
             letter-spacing: 0.1em;
         }
         p {
@@ -323,35 +332,34 @@ body {
     .info {
         padding: 60px 20%;
         background: $body-color;
-        color: #333;
+        color: #444;
 
         h1, h2 {
             padding: 0 0 25px 0;
             font-size: 48px;
-            font-weight: 600;
+            font-family: Gotham Bold;
         }
 
         p {
-            padding-bottom: 24px;
+            padding: 14px 0;
             font-size: 18px;
-            line-height: 28px;
+            line-height: 26px;
 
             .bold {
-                font-weight: 600;
+                font-family: Gotham Bold;
             }
             .highlight {
-                font-weight: 600;
+                font-family: Gotham Bold;
                 color: $highlight-color;
             }
             &.shout {
-                font-size: 24px;
-                font-weight: 600;
-                line-height: 32px;
+                font-size: 28px;
+                font-family: Gotham Bold;
+                line-height: 36px;
             }
             &.quote {
                 width: 80%;
-                padding-left: 10%;
-                padding-right: 10%;
+                padding: 48px 10%;
                 font-size: 24px;
                 font-style: italic;
                 text-align: center;

@@ -64,86 +64,92 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 @font-face {
-  font-family: 'Gidole';
-  src: url("../fonts/Gidole-Regular.ttf") format("truetype");
+  font-family: 'Gotham';
+  src: url("../fonts/GOTHAM-LIGHT.TTF") format("truetype");
+}
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url("../fonts/GOTHAM-BOLD.TTF") format("truetype");
 }
 /* Media Queries */
 @media only screen and (max-width: 678px) {
-  /* line 28, ../sass/main.scss */
+  /* line 36, ../sass/main.scss */
   body .nav .countdown .timer {
     width: 140px;
   }
-  /* line 31, ../sass/main.scss */
+  /* line 39, ../sass/main.scss */
   body .nav .countdown .timer .unit {
     width: 17px;
-    font-size: 12px;
+    font-size: 14px;
   }
-  /* line 37, ../sass/main.scss */
+  /* line 45, ../sass/main.scss */
   body .nav .cta {
     visibility: hidden;
   }
-  /* line 42, ../sass/main.scss */
+  /* line 50, ../sass/main.scss */
   body .content .blurb {
     max-width: 360px;
   }
-  /* line 45, ../sass/main.scss */
+  /* line 53, ../sass/main.scss */
   body .content .blurb img {
     width: 106px;
   }
-  /* line 48, ../sass/main.scss */
+  /* line 56, ../sass/main.scss */
   body .content .blurb h1 {
     font-size: 22px;
   }
-  /* line 51, ../sass/main.scss */
+  /* line 59, ../sass/main.scss */
   body .content .blurb p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 22px;
+    letter-spacing: 0em;
   }
-  /* line 56, ../sass/main.scss */
+  /* line 64, ../sass/main.scss */
   body .content .blurb .cta {
     visibility: visible;
+    letter-spacing: 0em;
   }
-  /* line 62, ../sass/main.scss */
+  /* line 71, ../sass/main.scss */
   body .about-content .info {
     padding: 60px 10%;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 678px) {
-  /* line 73, ../sass/main.scss */
+  /* line 82, ../sass/main.scss */
   body .content .blurb {
     max-width: 400px;
   }
-  /* line 76, ../sass/main.scss */
+  /* line 85, ../sass/main.scss */
   body .content .blurb img {
     width: 132px;
   }
-  /* line 79, ../sass/main.scss */
+  /* line 88, ../sass/main.scss */
   body .content .blurb h1 {
     font-size: 26px;
   }
-  /* line 82, ../sass/main.scss */
+  /* line 91, ../sass/main.scss */
   body .content .blurb p {
     font-size: 20px;
     line-height: 26px;
   }
 }
 /* General */
-/* line 92, ../sass/main.scss */
+/* line 101, ../sass/main.scss */
 html, body {
   width: 100%;
   height: 100%;
   min-height: 568px;
 }
 
-/* line 97, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 body {
   position: relative;
   background: #4577bb;
   color: #fff;
-  font-family: Gidole, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-/* line 104, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .loading {
   position: fixed;
   top: 0;
@@ -154,7 +160,7 @@ body {
   z-index: 999;
 }
 
-/* line 112, ../sass/main.scss */
+/* line 121, ../sass/main.scss */
 .button, .cta {
   padding: 0 24px;
   border-radius: 10px;
@@ -166,7 +172,7 @@ body {
 }
 
 /* Background */
-/* line 127, ../sass/main.scss */
+/* line 136, ../sass/main.scss */
 .goldengate {
   width: 38%;
   height: 58%;
@@ -179,7 +185,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 137, ../sass/main.scss */
+/* line 146, ../sass/main.scss */
 .fog-left {
   width: 42%;
   height: 16%;
@@ -192,7 +198,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* line 147, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 .fog-right {
   width: 46%;
   height: 16%;
@@ -206,7 +212,7 @@ body {
 }
 
 /* Nav */
-/* line 158, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 .nav {
   z-index: 2;
   width: 100%;
@@ -218,21 +224,21 @@ body {
   line-height: 120px;
   overflow-x: hidden;
 }
-/* line 168, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 .nav * {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 173, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
 .nav img {
   height: 30px;
 }
-/* line 177, ../sass/main.scss */
+/* line 186, ../sass/main.scss */
 .nav li {
   margin-left: 26px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-/* line 181, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 .nav li a {
   color: #fff;
   font-size: 18px;
@@ -242,7 +248,7 @@ body {
   text-decoration: none;
   line-height: 18px;
 }
-/* line 192, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 .nav .countdown {
   padding-left: 17.33333px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -254,7 +260,7 @@ body {
   top: 0;
   /* old timer styles */
 }
-/* line 232, ../sass/main.scss */
+/* line 241, ../sass/main.scss */
 .nav .countdown .timer {
   width: 210px;
   display: inline-block;
@@ -262,18 +268,18 @@ body {
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.06);
 }
-/* line 239, ../sass/main.scss */
+/* line 248, ../sass/main.scss */
 .nav .countdown .timer .unit {
   width: 44px;
   font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
-/* line 245, ../sass/main.scss */
+/* line 254, ../sass/main.scss */
 .nav .countdown .timer .separator {
   width: auto;
 }
-/* line 251, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 .nav .cta {
   height: 57.14286px;
   position: absolute;
@@ -284,7 +290,7 @@ body {
 }
 
 /* Content */
-/* line 263, ../sass/main.scss */
+/* line 272, ../sass/main.scss */
 .content {
   z-index: 1;
   width: 100%;
@@ -299,36 +305,36 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 274, ../sass/main.scss */
+/* line 283, ../sass/main.scss */
 .content .blurb {
   width: 100%;
   padding: 20px 26px 0 26px;
   max-width: 480px;
   text-align: center;
 }
-/* line 281, ../sass/main.scss */
+/* line 290, ../sass/main.scss */
 .content .blurb img {
   width: 148px;
 }
-/* line 284, ../sass/main.scss */
+/* line 293, ../sass/main.scss */
 .content .blurb h1 {
   padding-top: 30px;
   font-size: 28px;
-  font-weight: 600;
+  font-family: Gotham Bold;
   letter-spacing: 0.1em;
 }
-/* line 290, ../sass/main.scss */
+/* line 299, ../sass/main.scss */
 .content .blurb p {
   padding-top: 16px;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.05em;
 }
-/* line 297, ../sass/main.scss */
+/* line 306, ../sass/main.scss */
 .content .blurb p .highlight {
   color: #fa8c7c;
 }
-/* line 302, ../sass/main.scss */
+/* line 311, ../sass/main.scss */
 .content .blurb .cta {
   width: 170px;
   height: 42px;
@@ -340,73 +346,72 @@ body {
 }
 
 /* About */
-/* line 314, ../sass/main.scss */
+/* line 323, ../sass/main.scss */
 .about-content {
   width: 100%;
   padding-top: 120px;
 }
-/* line 318, ../sass/main.scss */
+/* line 327, ../sass/main.scss */
 .about-content .shading {
   width: 100%;
   height: 6px;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 323, ../sass/main.scss */
+/* line 332, ../sass/main.scss */
 .about-content .info {
   padding: 60px 20%;
   background: #fff;
-  color: #333;
+  color: #444;
 }
-/* line 328, ../sass/main.scss */
+/* line 337, ../sass/main.scss */
 .about-content .info h1, .about-content .info h2 {
   padding: 0 0 25px 0;
   font-size: 48px;
-  font-weight: 600;
+  font-family: Gotham Bold;
 }
-/* line 334, ../sass/main.scss */
+/* line 343, ../sass/main.scss */
 .about-content .info p {
-  padding-bottom: 24px;
+  padding: 14px 0;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 26px;
 }
-/* line 339, ../sass/main.scss */
+/* line 348, ../sass/main.scss */
 .about-content .info p .bold {
-  font-weight: 600;
-}
-/* line 342, ../sass/main.scss */
-.about-content .info p .highlight {
-  font-weight: 600;
-  color: #fa8c7c;
-}
-/* line 346, ../sass/main.scss */
-.about-content .info p.shout {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
+  font-family: Gotham Bold;
 }
 /* line 351, ../sass/main.scss */
+.about-content .info p .highlight {
+  font-family: Gotham Bold;
+  color: #fa8c7c;
+}
+/* line 355, ../sass/main.scss */
+.about-content .info p.shout {
+  font-size: 28px;
+  font-family: Gotham Bold;
+  line-height: 36px;
+}
+/* line 360, ../sass/main.scss */
 .about-content .info p.quote {
   width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 48px 10%;
   font-size: 24px;
   font-style: italic;
   text-align: center;
   line-height: 32px;
 }
-/* line 362, ../sass/main.scss */
+/* line 370, ../sass/main.scss */
 .about-content .info ul {
   padding: 20px 0 20px 50px;
   list-style: circle;
   font-size: 22px;
   line-height: 32px;
 }
-/* line 369, ../sass/main.scss */
+/* line 377, ../sass/main.scss */
 .about-content .info .section-break {
   width: 50%;
   margin: 50px 25%;
 }
-/* line 373, ../sass/main.scss */
+/* line 381, ../sass/main.scss */
 .about-content .info .section-break.wide {
   width: 100%;
   margin: 50px 0;
