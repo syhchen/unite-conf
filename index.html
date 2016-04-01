@@ -26,6 +26,7 @@
                     $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
                     $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
                     $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                    $("#secs").html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
 
                     if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
                     this.timeLeft--;
@@ -42,7 +43,16 @@
         <nav class="nav">
             <img src="img/unite-type.svg" alt="Unite">
             <div class="countdown" id="countdown">
-                <div class="time-unit">
+                <div class="timer">
+                    <div class="unit" id="days"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="hrs"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="min"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="secs"></div>
+                </div>
+                <!-- <div class="time-unit">
                     <div class="value" id="days">0</div>
                     <div class="label">Days</div>
                 </div>
@@ -53,18 +63,20 @@
                 <div class="time-unit">
                     <div class="value" id="min">0</div>
                     <div class="label">Min</div>
-                </div>
+                </div> -->
             </div>
             <!-- <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Sponsor</a></li>
             </ul> -->
-            <!-- <a href="#" class="cta">Learn more about Unite</a> -->
+            <a href="about.html" class="cta">Learn more about Unite</a>
         </nav>
         <section class="content">
             <div class="blurb">
                 <img src="img/unite.png" alt="Unite">
+                <h1>June 17-19, 2016</h1>
                 <p>A three-day conference in <span class="highlight">San Francisco</span> where top collegiate entrepreneurial organizations from across the nation gather to <span class="highlight">collaborate</span> and <span class="highlight">learn</span>.</p>
+                <a href="about.html" class="cta">Learn more about Unite</a>
             </div>
         </section>
     </body>

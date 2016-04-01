@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UNITE 2016</title>
+        <meta name="description" content="A three-day conference in San Francisco where top collegiate entrepreneurial organizations from across the nation gather to collaborate and learn.">
+        <meta name="keywords" content="Spark SC, USC, Unite, UniteConf, Entrepreneurship">
+        <link rel="icon" href="favicon.ico">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script type="text/javascript">
+            var SEC_IN_MIN = 60; // in sec
+            var SEC_IN_HOUR = this.SEC_IN_MIN*60; // in sec
+            var SEC_IN_DAY = this.SEC_IN_HOUR*24; // in sec
+            var REFRESH = 1; // in sec
+            var FADE = 0.3; // in sec
+
+            var timeLeft = Math.abs(new Date(2016, 6, 17) - new Date()) / 1000; // in sec
+            if(timeLeft < 0) {
+                // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
+            }
+            else {
+                this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
+                (function renderLoop(){
+                    $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                    $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
+                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                    $("#secs").html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+
+                    if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
+                    this.timeLeft--;
+                    setTimeout(renderLoop, this.REFRESH*1000);
+                })();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="loading" id="loading"></div>
+            <nav class="nav">
+            <img src="img/unite-type.svg" alt="Unite">
+            <div class="countdown" id="countdown">
+                <div class="timer">
+                    <div class="unit" id="days"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="hrs"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="min"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="secs"></div>
+                </div>
+                <!-- <div class="time-unit">
+                    <div class="value" id="days">0</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="time-unit">
+                    <div class="value" id="hrs">0</div>
+                    <div class="label">Hrs</div>
+                </div>
+                <div class="time-unit">
+                    <div class="value" id="min">0</div>
+                    <div class="label">Min</div>
+                </div> -->
+            </div>
+            <!-- <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Sponsor</a></li>
+            </ul> -->
+            <a href="index.html" class="cta">Go back home</a>
+        </nav>
+        <section class="about-content">
+            <div class="shading"></div>
+            <div class="info">
+                <img src="img/uw-asset1.png" alt="Unite" class="section-break">
+                <h1>Executive Summary</h1>
+                <p>Across the nation, high-impact collegiate entrepreneurial organizations are working to promote student entrepreneurship and foster a culture of innovation. At the University of Southern California, Spark SC’s “1000 Pitches” has produced over 2,000 unique product ideas in two years. At Stanford University, the annual “BASES Challenge” distributed over $100,000 this past year to encourage student business and social venture ideas. At the University of Michigan, MPowered has exposed over 15,000 students to entrepreneurship through efforts like their “Makeathon” and “Startup Career Fair.” With so much distributed effort and impact around the nation, we seem to be in a ‘Golden Age’ of organized student entrepreneurship.</p>
+                <p>There is, however, one problem with these groups. Despite the caliber of the work done by each university’s team, there has been almost no communication among them. Each university’s organization has had a single-minded focus on impact within their own community.</p>
+                <p>This lack of communication has done much to prevent organizations nation-wide from realizing their full potential as a cooperative force -- it’s time to collaborate. Alone, our efforts to promote entrepreneurship are localized to our respective regions, yet united we are stronger and better-equipped to make long-lasting, far-reaching change across the nation. This is the inspiration behind UNITE.</p>
+                <img src="img/uw-asset2.png" alt="Unite" class="section-break wide">
+                <h2>Event Description</h2>
+                <p>UNITE is a 3-day conference held in San Francisco that will bring together entrepreneurial leaders from 7 of our country’s best universities to begin forming a collaborative national student-entrepreneurship community. During these 3 days, students will focus on building bridges between like-minded organizations from across the United States, including:</p>
+                <ul>
+                    <li>Spark SC @ University of Southern California</li>
+                    <li>MPowered @ University of Michigan</li>
+                    <li>BASES @ Stanford University</li>
+                    <li>CORE @ Columbia University</li>
+                    <li>Startup Exchange @ Georgia Institute of Technology</li>
+                    <li>Princeton Social Impact @ Princeton University</li>
+                </ul>
+                <p>Invited are the President, Vice President and incoming President of each organization. Throughout the conference, these attendees will attend a series of workshops, activities, and dynamic trips aimed to:</p>
+                <ul>
+                    <li>Inspire students to break down the existing barriers between organizations.</li>
+                    <li>Empower organizations with new, geographically diverse relationships that would have never formed otherwise.</li>
+                    <li>Unite the organizations to form a nationwide community of students, solving problems and generating impact on a national scale.</li>
+                </ul>
+                <p>UNITE will serve as a model for cross-organization collaboration in the future and will be the first step in a long journey to create a meaningful nationwide entrepreneurial community among high-caliber student organizations.</p>
+                <p>We need your support to succeed.</p>
+            </div>
+        </section>
+
+    </body>
+</html>
