@@ -88,7 +88,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   /* line 50, ../sass/main.scss */
   body .content .blurb {
-    max-width: 360px;
+    max-width: 336px;
   }
   /* line 53, ../sass/main.scss */
   body .content .blurb img {
@@ -117,7 +117,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @media only screen and (max-width: 1024px) and (min-width: 678px) {
   /* line 82, ../sass/main.scss */
   body .content .blurb {
-    max-width: 400px;
+    max-width: 456px;
   }
   /* line 85, ../sass/main.scss */
   body .content .blurb img {
@@ -309,7 +309,7 @@ body {
 .content .blurb {
   width: 100%;
   padding: 20px 26px 0 26px;
-  max-width: 480px;
+  max-width: 536px;
   text-align: center;
 }
 /* line 290, ../sass/main.scss */

@@ -26,7 +26,7 @@ $button-shadow: #d04632;
 $button-padding: 24px;
 $button-radius: 10px;
 
-$blurb-width: 480px;
+$blurb-width: 536px;
 
 /* Media Queries */
 @media only screen and (max-width: 678px) {
@@ -48,7 +48,7 @@ $blurb-width: 480px;
         }
         .content {
             .blurb {
-                max-width: $blurb-width - 120px;
+                max-width: $blurb-width - 200px;
 
                 img {
                     width: 106px;
