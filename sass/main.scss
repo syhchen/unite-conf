@@ -330,9 +330,13 @@ body {
     }
 
     .info {
-        padding: 60px 20%;
+        padding: 60px 20% 100px 20%;
         background: $body-color;
         color: #444;
+
+        .highlight {
+            color: $highlight-color;
+        }
 
         h1, h2 {
             padding: 0 0 25px 0;
@@ -367,11 +371,30 @@ body {
             }
         }
 
-        ul {
-            padding: 20px 0 20px 50px;
+        ul.orgs {
+            padding: 20px 0 20px 40px;
             list-style: circle;
             font-size: 22px;
-            line-height: 32px;
+            line-height: 36px;
+        }
+
+        ul.blocks {
+            padding: 42px 0;
+            text-align: center;
+            li {
+                padding: 40px 0;
+
+                h2 {
+                    padding: 0;
+                    text-transform: uppercase;
+                }
+                p {
+                    width: 480px;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    padding: 20px 0 0 0;
+                }
+            }
         }
 
         .section-break {
