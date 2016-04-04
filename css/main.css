@@ -403,40 +403,44 @@ body {
   text-align: center;
   line-height: 32px;
 }
-/* line 374, ../sass/main.scss */
+/* line 372, ../sass/main.scss */
+.about-content .info p.bold {
+  font-family: Gotham Bold;
+}
+/* line 377, ../sass/main.scss */
 .about-content .info ul.orgs {
   padding: 20px 0 20px 40px;
   list-style: circle;
   font-size: 22px;
   line-height: 36px;
 }
-/* line 381, ../sass/main.scss */
+/* line 384, ../sass/main.scss */
 .about-content .info ul.blocks {
   padding: 42px 0;
   text-align: center;
 }
-/* line 384, ../sass/main.scss */
+/* line 387, ../sass/main.scss */
 .about-content .info ul.blocks li {
   padding: 40px 0;
 }
-/* line 387, ../sass/main.scss */
+/* line 390, ../sass/main.scss */
 .about-content .info ul.blocks li h2 {
   padding: 0;
   text-transform: uppercase;
 }
-/* line 391, ../sass/main.scss */
+/* line 394, ../sass/main.scss */
 .about-content .info ul.blocks li p {
   width: 480px;
   max-width: 100%;
   margin: 0 auto;
   padding: 20px 0 0 0;
 }
-/* line 400, ../sass/main.scss */
+/* line 403, ../sass/main.scss */
 .about-content .info .section-break {
   width: 50%;
   margin: 50px 25%;
 }
-/* line 404, ../sass/main.scss */
+/* line 407, ../sass/main.scss */
 .about-content .info .section-break.wide {
   width: 100%;
   margin: 50px 0;
