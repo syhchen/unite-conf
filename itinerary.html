@@ -1,224 +1,298 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UNITE 2016</title>
+        <meta name="description" content="A three-day conference in San Francisco where top collegiate entrepreneurial organizations from across the nation gather to collaborate and learn.">
+        <meta name="keywords" content="Spark SC, USC, Unite, UniteConf, Entrepreneurship">
+        <link rel="icon" href="favicon.ico">
+        <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/itinerary.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script type="text/javascript">
+            var SEC_IN_MIN = 60; // in sec
+            var SEC_IN_HOUR = this.SEC_IN_MIN*60; // in sec
+            var SEC_IN_DAY = this.SEC_IN_HOUR*24; // in sec
+            var REFRESH = 1; // in sec
+            var FADE = 0.3; // in sec
+
+            var timeLeft = Math.abs(new Date(2016, 6, 15) - new Date()) / 1000; // in sec
+            if(timeLeft < 0) {
+                // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
+            }
+            else {
+                this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
+                (function renderLoop(){
+                    $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                    $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
+                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                    $("#secs").html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+
+                    if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
+                    this.timeLeft--;
+                    setTimeout(renderLoop, this.REFRESH*1000);
+                })();
+            }
+        </script>
     </head>
     <body>
-        <section class="itinerary">
-            <ul class="timeline">
-                <!-- DAY ONE: FRIDAY -->
-                <li class="segment day">
-                    <div class="time dummy"></div>
-                    <div class="divider dummy">
-                        <div class="category"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <h2 class="dayofweek">Friday</h2>
-                    </div>
-                </li>
-                <li class="segment major">
-                    <div class="time"><span>5 - 8 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Students arrive in San Francisco</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-1.jpg" alt="San Francisco">
+        <div class="loading" id="loading"></div>
+        <nav class="nav">
+            <img src="img/unite-type.svg" alt="Unite">
+            <div class="countdown" id="countdown">
+                <div class="timer">
+                    <div class="unit" id="days"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="hrs"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="min"></div>
+                    <div class="unit separator">:</div>
+                    <div class="unit" id="secs"></div>
+                </div>
+                <!-- <div class="time-unit">
+                    <div class="value" id="days">0</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="time-unit">
+                    <div class="value" id="hrs">0</div>
+                    <div class="label">Hrs</div>
+                </div>
+                <div class="time-unit">
+                    <div class="value" id="min">0</div>
+                    <div class="label">Min</div>
+                </div> -->
+            </div>
+            <!-- <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Sponsor</a></li>
+            </ul> -->
+            <a href="index.html" class="cta">Go back home</a>
+        </nav>
+        <section class="itinerary-content">
+            <div class="shading"></div>
+            <div class="info">
+                <img src="img/uw-asset1.png" alt="Unite" class="section-break-small">
+                <!-- <h1>Trip Itinerary</h1> -->
+                <!-- <p></p> -->
+            </div>
+            <section class="itinerary">
+                <ul class="timeline">
+                    <!-- DAY ONE: FRIDAY -->
+                    <li class="segment day">
+                        <div class="time dummy"></div>
+                        <div class="divider dummy">
+                            <div class="category"></div>
+                            <div class="line"></div>
                         </div>
-                    </div>
-                </li>
-                <li class="segment major">
-                    <div class="time"><span>8 - 9 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Official welcome and dinner</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-2.jpg" alt="House">
-                            <div class="caption house">Our 19 bed AirBnb!</div>
+                        <div class="info">
+                            <h2 class="dayofweek">Friday</h2>
                         </div>
-                    </div>
-                </li>
-                <li class="segment end">
-                    <div class="time"><span>9 - 12 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Socializing</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-6.png" alt="Sleep">
+                    </li>
+                    <li class="segment major">
+                        <div class="time"><span>5 - 8 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
                         </div>
-                    </div>
-                </li>
-                <!-- DAY TWO: SATURDAY -->
-                <li class="segment day">
-                    <div class="time dummy"></div>
-                    <div class="divider dummy">
-                        <div class="category"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <h2 class="dayofweek">Saturday</h2>
-                    </div>
-                </li>
-                <li class="segment major">
-                    <div class="time"><span>9:30 - 10:30 AM</span></div>
-                    <div class="divider">
-                        <div class="category studio"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Head to downtown studio for breakfast</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-3.jpg" alt="Downtown Studio">
-                            <div class="caption studio">Our Studio Space</div>
+                        <div class="info">
+                            <div class="description">Students arrive in San Francisco</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-1.jpg" alt="San Francisco">
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>10:30 - 1 PM</span></div>
-                    <div class="divider">
-                        <div class="category studio"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Icebreaker and Identity Workshop</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>1 - 2:30 PM</span></div>
-                    <div class="divider">
-                        <div class="category sf"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="tba">TBA April 25</div>
-                        <div class="description">Company tour and lunch</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>2:30 -3 PM</span></div>
-                    <div class="divider">
-                        <div class="category sf"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="tba">TBA April 25</div>
-                        <div class="description">Speaker</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>3 - 4:30 PM</span></div>
-                    <div class="divider">
-                        <div class="category studio"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Post-Speaker Workshop</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>4:30 -6 PM</span></div>
-                    <div class="divider">
-                        <div class="category sf"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Activity in Downtown SF</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>6:20 - 8 PM</span></div>
-                    <div class="divider">
-                        <div class="category sf"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Dinner with guest</div>
-                    </div>
-                </li>
-                <li class="segment end">
-                    <div class="time"><span>8 - 12 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Socializing</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-6.png" alt="Sleep">
+                    </li>
+                    <li class="segment major">
+                        <div class="time"><span>8 - 9 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
                         </div>
-                    </div>
-                </li>
-                <!-- DAY THREE: SUNDAY -->
-                <li class="segment day">
-                    <div class="time dummy"></div>
-                    <div class="divider dummy">
-                        <div class="category"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <h2 class="dayofweek">Saturday</h2>
-                    </div>
-                </li>
-                <li class="segment major">
-                    <div class="time"><span>8:45 - 10:30 AM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Morning hike and breakfast</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-4.jpg" alt="Hike">
+                        <div class="info">
+                            <div class="description">Official welcome and dinner</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-2.jpg" alt="House">
+                                <div class="caption house">Our 19 bed AirBnb!</div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>10:30 - 12:30 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Uniting Goals</div>
-                    </div>
-                </li>
-                <li class="segment minor">
-                    <div class="time"><span>1:30 - 2 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Next steps</div>
-                    </div>
-                </li>
-                <li class="segment end theactualend">
-                    <div class="time"><span>2 - 3 PM</span></div>
-                    <div class="divider">
-                        <div class="category house"></div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="info">
-                        <div class="description">Lunch and goodbyes</div>
-                        <div class="photo">
-                            <img src="img/itinerary/unite-assets-5.png" alt="Unite">
+                    </li>
+                    <li class="segment end">
+                        <div class="time"><span>9 - 12 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-            <ul class="legend">
-                <li class="house">House</li>
-                <li class="studio">Studio</li>
-                <li class="sf">Out in SF</li>
-            </ul>
+                        <div class="info">
+                            <div class="description">Socializing</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-6.png" alt="Sleep">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- DAY TWO: SATURDAY -->
+                    <li class="segment day">
+                        <div class="time dummy"></div>
+                        <div class="divider dummy">
+                            <div class="category"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="dayofweek">Saturday</h2>
+                        </div>
+                    </li>
+                    <li class="segment major">
+                        <div class="time"><span>9:30 - 10:30 AM</span></div>
+                        <div class="divider">
+                            <div class="category studio"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Head to downtown studio for breakfast</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-3.jpg" alt="Downtown Studio">
+                                <div class="caption studio">Our Studio Space</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>10:30 - 1 PM</span></div>
+                        <div class="divider">
+                            <div class="category studio"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Icebreaker and Identity Workshop</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>1 - 2:30 PM</span></div>
+                        <div class="divider">
+                            <div class="category sf"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="tba">TBA April 25</div>
+                            <div class="description">Company tour and lunch</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>2:30 -3 PM</span></div>
+                        <div class="divider">
+                            <div class="category sf"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="tba">TBA April 25</div>
+                            <div class="description">Speaker</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>3 - 4:30 PM</span></div>
+                        <div class="divider">
+                            <div class="category studio"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Post-Speaker Workshop</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>4:30 -6 PM</span></div>
+                        <div class="divider">
+                            <div class="category sf"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Activity in Downtown SF</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>6:20 - 8 PM</span></div>
+                        <div class="divider">
+                            <div class="category sf"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Dinner with guest</div>
+                        </div>
+                    </li>
+                    <li class="segment end">
+                        <div class="time"><span>8 - 12 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Socializing</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-6.png" alt="Sleep">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- DAY THREE: SUNDAY -->
+                    <li class="segment day">
+                        <div class="time dummy"></div>
+                        <div class="divider dummy">
+                            <div class="category"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <h2 class="dayofweek">Saturday</h2>
+                        </div>
+                    </li>
+                    <li class="segment major">
+                        <div class="time"><span>8:45 - 10:30 AM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Morning hike and breakfast</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-4.jpg" alt="Hike">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>10:30 - 12:30 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Uniting Goals</div>
+                        </div>
+                    </li>
+                    <li class="segment minor">
+                        <div class="time"><span>1:30 - 2 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Next steps</div>
+                        </div>
+                    </li>
+                    <li class="segment end theactualend">
+                        <div class="time"><span>2 - 3 PM</span></div>
+                        <div class="divider">
+                            <div class="category house"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="info">
+                            <div class="description">Lunch and goodbyes</div>
+                            <div class="photo">
+                                <img src="img/itinerary/unite-assets-5.png" alt="Unite">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="legend">
+                    <li class="house">House</li>
+                    <li class="studio">Studio</li>
+                    <li class="sf">Out in SF</li>
+                </ul>
+            </section>
         </section>
     </body>
 </html>

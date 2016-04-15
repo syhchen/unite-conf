@@ -15,11 +15,6 @@ $house-color: #4577bb;
 $studio-color: #65be5e;
 $sf-color: #e29125;
 
-body {
-    font-family: sans-serif;
-    text-align: center;
-}
-
 .dummy {
     visibility: hidden;
 }
@@ -75,6 +70,7 @@ ul.timeline {
 
         &>.time {
             width: $segment-time-width !important;
+            font-family: 'Gotham Bold';
 
             &>span {
                 width: 140px; /* accounts for longer text overflow */
@@ -132,10 +128,12 @@ ul.timeline {
 
         &>.info {
             width: $segment-info-width;
+            font-family: 'Gotham Bold';
 
             &>.dayofweek {
                 font-size: 26px;
                 font-style: italic;
+                line-height: 64px;
             }
 
             &>.tba {
@@ -161,13 +159,14 @@ ul.timeline {
                 position: relative;
 
                 &>.caption {
-                    width: 200px; height: 40px;
+                    width: 200px; height: 42px;
+                    padding-top: 2px; /* visual tweak */
                     position: absolute;
                     top: 0; right: -200px;
                     background: #eaeaea;
                     text-align: center;
                     text-transform: uppercase;
-                    line-height: 40px;
+                    line-height: 42px;
 
                     &.house {
                         border-bottom: 3px solid $house-color;
@@ -205,6 +204,7 @@ ul.timeline {
     width: $legend-width;
     margin-top: $day-margin-top * 3; padding: 0;
     list-style: none;
+    font-family: 'Gotham Bold';
     font-weight: bold;
     text-align: right;
     text-transform: uppercase;

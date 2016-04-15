@@ -1,25 +1,19 @@
 /* line 18, ../sass/itinerary.scss */
-body {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-/* line 23, ../sass/itinerary.scss */
 .dummy {
   visibility: hidden;
 }
 
-/* line 27, ../sass/itinerary.scss */
+/* line 22, ../sass/itinerary.scss */
 .itinerary {
   display: inline-block;
 }
-/* line 30, ../sass/itinerary.scss */
+/* line 25, ../sass/itinerary.scss */
 .itinerary > * {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 36, ../sass/itinerary.scss */
+/* line 31, ../sass/itinerary.scss */
 ul.timeline {
   width: 540px;
   margin: 0;
@@ -28,28 +22,28 @@ ul.timeline {
   font-size: 0;
   text-align: left;
 }
-/* line 43, ../sass/itinerary.scss */
+/* line 38, ../sass/itinerary.scss */
 ul.timeline li.segment {
   margin: 0;
   padding: 0;
 }
-/* line 46, ../sass/itinerary.scss */
+/* line 41, ../sass/itinerary.scss */
 ul.timeline li.segment.day {
   margin-top: 40px;
 }
-/* line 51, ../sass/itinerary.scss */
+/* line 46, ../sass/itinerary.scss */
 ul.timeline li.segment.major > * {
   height: 290px;
 }
-/* line 57, ../sass/itinerary.scss */
+/* line 52, ../sass/itinerary.scss */
 ul.timeline li.segment.minor > * {
   height: 54px;
 }
-/* line 63, ../sass/itinerary.scss */
+/* line 58, ../sass/itinerary.scss */
 ul.timeline li.segment.end > * {
   height: 120px;
 }
-/* line 68, ../sass/itinerary.scss */
+/* line 63, ../sass/itinerary.scss */
 ul.timeline li.segment > * {
   position: relative;
   display: inline-block;
@@ -57,11 +51,12 @@ ul.timeline li.segment > * {
   font-weight: bold;
   vertical-align: top;
 }
-/* line 76, ../sass/itinerary.scss */
+/* line 71, ../sass/itinerary.scss */
 ul.timeline li.segment > .time {
   width: 15% !important;
+  font-family: 'Gotham Bold';
 }
-/* line 79, ../sass/itinerary.scss */
+/* line 75, ../sass/itinerary.scss */
 ul.timeline li.segment > .time > span {
   width: 140px;
   /* accounts for longer text overflow */
@@ -71,15 +66,15 @@ ul.timeline li.segment > .time > span {
   color: #cdcdcd;
   line-height: 30px;
 }
-/* line 89, ../sass/itinerary.scss */
+/* line 85, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider {
   width: 10%;
 }
-/* line 92, ../sass/itinerary.scss */
+/* line 88, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider.dummy {
   width: 5% !important;
 }
-/* line 96, ../sass/itinerary.scss */
+/* line 92, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider > .category {
   width: 15px;
   height: 15px;
@@ -93,19 +88,19 @@ ul.timeline li.segment > .divider > .category {
   border-radius: 15px;
   z-index: 2;
 }
-/* line 105, ../sass/itinerary.scss */
+/* line 101, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider > .category.house {
   background: #4577bb;
 }
-/* line 108, ../sass/itinerary.scss */
+/* line 104, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider > .category.studio {
   background: #65be5e;
 }
-/* line 111, ../sass/itinerary.scss */
+/* line 107, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider > .category.sf {
   background: #e29125;
 }
-/* line 116, ../sass/itinerary.scss */
+/* line 112, ../sass/itinerary.scss */
 ul.timeline li.segment > .divider > .line {
   width: 0;
   margin: 0 auto;
@@ -117,7 +112,7 @@ ul.timeline li.segment > .divider > .line {
   border-right: 3px solid #474747;
   z-index: 1;
 }
-/* line 125, ../sass/itinerary.scss */
+/* line 121, ../sass/itinerary.scss */
 ul.timeline li.segment.end:not(.theactualend) > .divider > .line {
   width: 3px;
   border: none;
@@ -125,22 +120,24 @@ ul.timeline li.segment.end:not(.theactualend) > .divider > .line {
   background-position: top;
   background-size: cover;
 }
-/* line 133, ../sass/itinerary.scss */
+/* line 129, ../sass/itinerary.scss */
 ul.timeline li.segment > .info {
   width: 75%;
+  font-family: 'Gotham Bold';
 }
-/* line 136, ../sass/itinerary.scss */
+/* line 133, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .dayofweek {
   font-size: 26px;
   font-style: italic;
+  line-height: 64px;
 }
-/* line 141, ../sass/itinerary.scss */
+/* line 139, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .tba {
   position: absolute;
   right: 0;
   line-height: 30px;
 }
-/* line 146, ../sass/itinerary.scss */
+/* line 144, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .tba:after {
   content: '';
   width: 100%;
@@ -149,61 +146,64 @@ ul.timeline li.segment > .info > .tba:after {
   display: block;
   background: #e29125;
 }
-/* line 155, ../sass/itinerary.scss */
+/* line 153, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .description {
   line-height: 30px;
 }
-/* line 159, ../sass/itinerary.scss */
+/* line 157, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .photo {
   margin-top: 10px;
   position: relative;
 }
-/* line 163, ../sass/itinerary.scss */
+/* line 161, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .photo > .caption {
   width: 200px;
-  height: 40px;
+  height: 42px;
+  padding-top: 2px;
+  /* visual tweak */
   position: absolute;
   top: 0;
   right: -200px;
   background: #eaeaea;
   text-align: center;
   text-transform: uppercase;
-  line-height: 40px;
+  line-height: 42px;
 }
-/* line 172, ../sass/itinerary.scss */
+/* line 171, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .photo > .caption.house {
   border-bottom: 3px solid #4577bb;
   color: #4577bb;
 }
-/* line 177, ../sass/itinerary.scss */
+/* line 176, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .photo > .caption.studio {
   border-bottom: 3px solid #65be5e;
   color: #65be5e;
 }
-/* line 183, ../sass/itinerary.scss */
+/* line 182, ../sass/itinerary.scss */
 ul.timeline li.segment > .info > .photo > img {
   width: 100%;
   border: 3px solid #eaeaea;
   box-sizing: border-box;
 }
-/* line 191, ../sass/itinerary.scss */
+/* line 190, ../sass/itinerary.scss */
 ul.timeline li.segment.end > .info > .photo > img {
   width: 20%;
   margin-top: 15px;
   border: none;
 }
-/* line 197, ../sass/itinerary.scss */
+/* line 196, ../sass/itinerary.scss */
 ul.timeline li.segment.theactualend > .info > .photo > img {
   width: 30%;
   border: none;
 }
 
-/* line 204, ../sass/itinerary.scss */
+/* line 203, ../sass/itinerary.scss */
 .legend {
   width: 360px;
   margin-top: 120px;
   padding: 0;
   list-style: none;
+  font-family: 'Gotham Bold';
   font-weight: bold;
   text-align: right;
   text-transform: uppercase;

@@ -223,22 +223,23 @@ body {
   box-sizing: border-box;
   line-height: 120px;
   overflow-x: hidden;
+  background: #4577bb;
 }
-/* line 177, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 .nav * {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 182, ../sass/main.scss */
+/* line 183, ../sass/main.scss */
 .nav img {
   height: 30px;
 }
-/* line 186, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
 .nav li {
   margin-left: 26px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-/* line 190, ../sass/main.scss */
+/* line 191, ../sass/main.scss */
 .nav li a {
   color: #fff;
   font-size: 18px;
@@ -248,7 +249,7 @@ body {
   text-decoration: none;
   line-height: 18px;
 }
-/* line 201, ../sass/main.scss */
+/* line 202, ../sass/main.scss */
 .nav .countdown {
   padding-left: 17.33333px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -260,7 +261,7 @@ body {
   top: 0;
   /* old timer styles */
 }
-/* line 241, ../sass/main.scss */
+/* line 242, ../sass/main.scss */
 .nav .countdown .timer {
   width: 210px;
   display: inline-block;
@@ -268,18 +269,18 @@ body {
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.06);
 }
-/* line 248, ../sass/main.scss */
+/* line 249, ../sass/main.scss */
 .nav .countdown .timer .unit {
   width: 44px;
   font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
-/* line 254, ../sass/main.scss */
+/* line 255, ../sass/main.scss */
 .nav .countdown .timer .separator {
   width: auto;
 }
-/* line 260, ../sass/main.scss */
+/* line 261, ../sass/main.scss */
 .nav .cta {
   height: 57.14286px;
   position: absolute;
@@ -290,7 +291,7 @@ body {
 }
 
 /* Content */
-/* line 272, ../sass/main.scss */
+/* line 273, ../sass/main.scss */
 .content {
   z-index: 1;
   width: 100%;
@@ -305,36 +306,36 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 283, ../sass/main.scss */
+/* line 284, ../sass/main.scss */
 .content .blurb {
   width: 100%;
   padding: 20px 26px 0 26px;
   max-width: 536px;
   text-align: center;
 }
-/* line 290, ../sass/main.scss */
+/* line 291, ../sass/main.scss */
 .content .blurb img {
   width: 148px;
 }
-/* line 293, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 .content .blurb h1 {
   padding-top: 30px;
   font-size: 28px;
   font-family: Gotham Bold;
   letter-spacing: 0.1em;
 }
-/* line 299, ../sass/main.scss */
+/* line 300, ../sass/main.scss */
 .content .blurb p {
   padding-top: 16px;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.05em;
 }
-/* line 306, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 .content .blurb p .highlight {
   color: #fa8c7c;
 }
-/* line 311, ../sass/main.scss */
+/* line 312, ../sass/main.scss */
 .content .blurb .cta {
   width: 170px;
   height: 42px;
@@ -345,56 +346,84 @@ body {
   visibility: hidden;
 }
 
-/* About */
 /* line 323, ../sass/main.scss */
+.itinerary-content {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+  background: #fff;
+  color: #444;
+}
+/* line 331, ../sass/main.scss */
+.itinerary-content .shading {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.2);
+}
+/* line 336, ../sass/main.scss */
+.itinerary-content .info {
+  background: #fff;
+  text-align: left;
+  color: #444;
+}
+/* line 342, ../sass/main.scss */
+.itinerary-content .info h1 {
+  padding: 0 0 25px 0;
+  font-size: 48px;
+  font-family: Gotham Bold;
+}
+
+/* About */
+/* line 381, ../sass/main.scss */
 .about-content {
   width: 100%;
   padding-top: 120px;
 }
-/* line 327, ../sass/main.scss */
+/* line 385, ../sass/main.scss */
 .about-content .shading {
   width: 100%;
   height: 6px;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 332, ../sass/main.scss */
+/* line 390, ../sass/main.scss */
 .about-content .info {
   padding: 60px 20% 100px 20%;
   background: #fff;
   color: #444;
 }
-/* line 337, ../sass/main.scss */
+/* line 395, ../sass/main.scss */
 .about-content .info .highlight {
   color: #fa8c7c;
 }
-/* line 341, ../sass/main.scss */
+/* line 399, ../sass/main.scss */
 .about-content .info h1, .about-content .info h2 {
   padding: 0 0 25px 0;
   font-size: 48px;
   font-family: Gotham Bold;
 }
-/* line 347, ../sass/main.scss */
+/* line 405, ../sass/main.scss */
 .about-content .info p {
   padding: 14px 0;
   font-size: 18px;
   line-height: 26px;
 }
-/* line 352, ../sass/main.scss */
+/* line 410, ../sass/main.scss */
 .about-content .info p .bold {
   font-family: Gotham Bold;
 }
-/* line 355, ../sass/main.scss */
+/* line 413, ../sass/main.scss */
 .about-content .info p .highlight {
   font-family: Gotham Bold;
   color: #fa8c7c;
 }
-/* line 359, ../sass/main.scss */
+/* line 417, ../sass/main.scss */
 .about-content .info p.shout {
   font-size: 28px;
   font-family: Gotham Bold;
   line-height: 36px;
 }
-/* line 364, ../sass/main.scss */
+/* line 422, ../sass/main.scss */
 .about-content .info p.quote {
   width: 80%;
   padding: 48px 10%;
@@ -403,45 +432,53 @@ body {
   text-align: center;
   line-height: 32px;
 }
-/* line 372, ../sass/main.scss */
+/* line 430, ../sass/main.scss */
 .about-content .info p.bold {
   font-family: Gotham Bold;
 }
-/* line 377, ../sass/main.scss */
+/* line 435, ../sass/main.scss */
 .about-content .info ul.orgs {
   padding: 20px 0 20px 40px;
   list-style: circle;
   font-size: 22px;
   line-height: 36px;
 }
-/* line 384, ../sass/main.scss */
+/* line 442, ../sass/main.scss */
 .about-content .info ul.blocks {
   padding: 42px 0;
   text-align: center;
 }
-/* line 387, ../sass/main.scss */
+/* line 445, ../sass/main.scss */
 .about-content .info ul.blocks li {
   padding: 40px 0;
 }
-/* line 390, ../sass/main.scss */
+/* line 448, ../sass/main.scss */
 .about-content .info ul.blocks li h2 {
   padding: 0;
   text-transform: uppercase;
 }
-/* line 394, ../sass/main.scss */
+/* line 452, ../sass/main.scss */
 .about-content .info ul.blocks li p {
   width: 480px;
   max-width: 100%;
   margin: 0 auto;
   padding: 20px 0 0 0;
 }
-/* line 403, ../sass/main.scss */
-.about-content .info .section-break {
+
+/* line 463, ../sass/main.scss */
+.section-break {
   width: 50%;
   margin: 50px 25%;
 }
-/* line 407, ../sass/main.scss */
-.about-content .info .section-break.wide {
+
+/* line 467, ../sass/main.scss */
+.section-break.wide {
   width: 100%;
   margin: 50px 0;
+}
+
+/* line 471, ../sass/main.scss */
+.section-break-small {
+  width: 30%;
+  margin: 50px 35% 0 35%;
 }

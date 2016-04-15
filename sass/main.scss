@@ -173,6 +173,7 @@ body {
     box-sizing: border-box;
     line-height: $nav-height;
     overflow-x: hidden;
+    background: $background;
 
     * {
         display: inline-block;
@@ -319,6 +320,63 @@ body {
     }
 }
 
+.itinerary-content {
+    width: 100%;
+    padding-top: $nav-height;
+    padding-bottom: $nav-height;
+    text-align: center;
+    background: #fff;
+    color: #444;
+
+    .shading {
+        width: 100%; height: 6px;
+        background: rgba(0,0,0,0.2);
+    }
+
+    .info {
+        // padding: 60px 20% 100px 20%;
+        background: $body-color;
+        text-align: left;
+        color: #444;
+
+        h1 {
+            padding: 0 0 25px 0;
+            font-size: 48px;
+            font-family: Gotham Bold;
+        }
+        //
+        // p {
+        //     padding: 14px 0;
+        //     font-size: 18px;
+        //     line-height: 26px;
+        //
+        //     .bold {
+        //         font-family: Gotham Bold;
+        //     }
+        //     .highlight {
+        //         font-family: Gotham Bold;
+        //         color: $highlight-color;
+        //     }
+        //     &.shout {
+        //         font-size: 28px;
+        //         font-family: Gotham Bold;
+        //         line-height: 36px;
+        //     }
+        //     &.quote {
+        //         width: 80%;
+        //         padding: 48px 10%;
+        //         font-size: 24px;
+        //         font-style: italic;
+        //         text-align: center;
+        //         line-height: 32px;
+        //     }
+        //     &.bold {
+        //         font-family: Gotham Bold;
+        //     }
+        // }
+    }
+}
+
 /* About */
 .about-content {
     width: 100%;
@@ -399,14 +457,18 @@ body {
                 }
             }
         }
-
-        .section-break {
-            width: 50%;
-            margin: 50px 25%;
-        }
-        .section-break.wide {
-            width: 100%;
-            margin: 50px 0;
-        }
     }
+}
+
+.section-break {
+    width: 50%;
+    margin: 50px 25%;
+}
+.section-break.wide {
+    width: 100%;
+    margin: 50px 0;
+}
+.section-break-small {
+    width: 30%;
+    margin: 50px 35% 0 35%;
 }
