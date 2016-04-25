@@ -1,0 +1,13 @@
+/* Flags */
+/* Variables */
+/* Classes */
+/* line 54, ../sass/variables.scss */
+.button {
+  padding: 0 24px;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 #e63d20;
+  background: #eb6149;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}

@@ -1,36 +1,81 @@
-$timeline-width: 540px;
-$legend-width: 360px;
+@import 'main';
+@import 'variables';
 
-$day-margin-top: 40px;
-
-$segment-time-width: 15%;
-$segment-divider-width: 10%;
-$segment-info-width: 75%;
-$segment-height-major: 290px;
-$segment-height-minor: 54px;
-$segment-height-end: 120px;
-
-$category-dimensions: 15px;
-$house-color: #4577bb;
-$studio-color: #65be5e;
-$sf-color: #e29125;
-
-.dummy {
-    visibility: hidden;
+body {
+    background: $primary-white;
 }
 
-.itinerary {
-    display: inline-block;
+.itinerary-preface {
 
+    img {
+        width: 320px;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    h1 {
+        margin-top: 40px;
+    }
+
+    p {
+        margin-top: 24px;
+    }
+}
+
+.itinerary-info {
     &>* {
         display: inline-block;
         vertical-align: top;
     }
 }
 
-ul.timeline {
-    width: $timeline-width;
+.legend {
+    width: auto;
+    position: absolute;
+    top: $day-margin-top + $day-line-height;
+    right: 0;
+    list-style: none;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+    line-height: 42px;
+    z-index: 1;
+
+    li.title {
+        font-size: 18px;
+        font-style: italic;
+        letter-spacing: .2em;
+    }
+
+    li:not(.title):after {
+        content: '';
+        width: 20px; height: 20px;
+        margin-top: -4px; /* compensates for baseline */
+        margin-left: 20px;
+        display: inline-block;
+        border-radius: 20px;
+        vertical-align: middle;
+    }
+
+    li.house:after {
+        background: $house-blue;
+    }
+
+    li.studio:after {
+        background: $studio-green;
+    }
+
+    li.sf:after {
+        background: $sf-orange;
+    }
+}
+
+.timeline {
+    width: 100%;
+    max-width: $timeline-max-width;
     margin: 0; padding: 0;
+    position: relative;
     list-style: none;
     font-size: 0;
     text-align: left;
@@ -38,6 +83,11 @@ ul.timeline {
     li.segment {
         margin: 0; padding: 0;
 
+        .dummy {
+            visibility: hidden;
+        }
+
+        // section types
         &.day {
             margin-top: $day-margin-top;
         }
@@ -60,6 +110,15 @@ ul.timeline {
             }
         }
 
+        &.end:not(.theactualend)>.divider>.line {
+            width: 3px;
+            border: none;
+            background-image: url('../img/itinerary/dotted.svg');
+            background-position: top;
+            background-size: cover;
+        }
+
+        // contents of section
         &>* {
             position: relative;
             display: inline-block;
@@ -69,8 +128,7 @@ ul.timeline {
         }
 
         &>.time {
-            width: $segment-time-width !important;
-            font-family: 'Gotham Bold';
+            font-weight: bold;
 
             &>span {
                 width: 140px; /* accounts for longer text overflow */
@@ -84,9 +142,10 @@ ul.timeline {
 
         &>.divider {
             width: $segment-divider-width;
+            margin-left: -$segment-divider-width/2;
 
             &.dummy {
-                width: 5% !important;
+                width: $segment-divider-width/2;
             }
 
             &>.category {
@@ -99,13 +158,13 @@ ul.timeline {
                 z-index: 2;
 
                 &.house {
-                    background: $house-color;
+                    background: $house-blue;
                 }
                 &.studio {
-                    background: $studio-color;
+                    background: $studio-green;
                 }
                 &.sf {
-                    background: $sf-color;
+                    background: $sf-orange;
                 }
             }
 
@@ -118,13 +177,6 @@ ul.timeline {
                 z-index: 1;
             }
         }
-        &.end:not(.theactualend)>.divider>.line {
-            width: 3px;
-            border: none;
-            background-image: url('../img/itinerary/dotted.svg');
-            background-position: top;
-            background-size: cover;
-        }
 
         &>.info {
             width: $segment-info-width;
@@ -133,7 +185,7 @@ ul.timeline {
             &>.dayofweek {
                 font-size: 26px;
                 font-style: italic;
-                line-height: 64px;
+                line-height: $day-line-height;
             }
 
             &>.tba {
@@ -146,7 +198,7 @@ ul.timeline {
                     width: 100%; height: 3px;
                     margin-top: -3px;
                     display: block;
-                    background: $sf-color;
+                    background: $sf-orange;
                 }
             }
 
@@ -169,13 +221,13 @@ ul.timeline {
                     line-height: 42px;
 
                     &.house {
-                        border-bottom: 3px solid $house-color;
-                        color: $house-color;
+                        border-bottom: 3px solid $house-blue;
+                        color: $house-blue;
                     }
 
                     &.studio {
-                        border-bottom: 3px solid $studio-color;
-                        color: $studio-color;
+                        border-bottom: 3px solid $studio-green;
+                        color: $studio-green;
                     }
                 }
 
@@ -197,35 +249,5 @@ ul.timeline {
             width: 30%;
             border: none;
         }
-    }
-}
-
-.legend {
-    width: $legend-width;
-    margin-top: $day-margin-top * 3; padding: 0;
-    list-style: none;
-    font-family: 'Gotham Bold';
-    font-weight: bold;
-    text-align: right;
-    text-transform: uppercase;
-    line-height: 42px;
-
-    li:after {
-        content: '';
-        width: 20px; height: 20px;
-        margin-top: -4px; /* compensates for baseline */
-        margin-left: 20px;
-        display: inline-block;
-        border-radius: 20px;
-        vertical-align: middle;
-    }
-    li.house:after {
-        background: $house-color;
-    }
-    li.studio:after {
-        background: $studio-color;
-    }
-    li.sf:after {
-        background: $sf-color;
     }
 }

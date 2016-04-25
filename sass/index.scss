@@ -1,0 +1,261 @@
+@import 'main';
+@import 'variables';
+
+.nav {
+    background: none !important;
+    box-shadow: none;
+}
+
+/* Background */
+.goldengate {
+    width: 38%; height: 58%;
+    position: absolute;
+    right: 0; bottom: 0;
+    background-image: url('../img/goldengate-cropped.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+.fog-left {
+    width: 42%; height: 16%;
+    position: absolute;
+    left: 0; bottom: 0;
+    background-image: url('../img/fog-left-cropped.png');
+    background-size: contain;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+.fog-right {
+    width: 46%; height: 16%;
+    position: absolute;
+    right: 0; bottom: 0;
+    background-image: url('../img/fog-right-cropped.png');
+    background-size: contain;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+/* Nav */
+.nav {
+    z-index: 2;
+    width: 100%; height: $nav-height;
+    padding: 0 $nav-padding;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    line-height: $nav-height;
+    overflow-x: hidden;
+    background: $primary-blue;
+
+    * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    img {
+        height: $nav-height/4;
+    }
+
+    li {
+        margin-left: $nav-padding;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+        a {
+            color: $primary-white;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.24em;
+            text-decoration: none;
+            line-height: 18px;
+        }
+    }
+
+    .countdown {
+        padding-left: $nav-padding*2/3;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 0;
+        text-align: center;
+        text-transform: uppercase;
+        overflow-x: hidden;
+        position: absolute;
+        top: 0;
+
+        /* old timer styles */
+        // .time-unit {
+        //     $label-spacing: 2px;
+        //     $label-height: 32px;
+        //
+        //     width: 58px;
+        //     margin-top: $label-height;
+        //     margin-right: 8px;
+        //     display: inline-block;
+        //     line-height: 48px;
+        //
+        //     .value, .label {
+        //         padding-left: $label-spacing/2;
+        //         display: block;
+        //         letter-spacing: $label-spacing;
+        //     }
+        //
+        //     .value {
+        //         border-radius: 6px;
+        //         font-weight: 600;
+        //         font-size: 20px;
+        //         background: $primary-white;
+        //         color: $primary-blue;
+        //     }
+        //     .label {
+        //         font-size: 12px;
+        //         line-height: $label-height;
+        //     }
+        // }
+
+        .timer {
+            width: 210px;
+            display: inline-block;
+            line-height: 48px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.06);
+
+            .unit {
+                width: 44px;
+                font-size: 18px;
+                font-weight: 600;
+                color: $primary-white;
+            }
+            .separator {
+                width: auto;
+            }
+        }
+    }
+
+    .cta {
+        $height: $nav-height/2.1;
+        @extend .button;
+
+        height: $height;
+        position: absolute;
+        right: $nav-padding; top: ($nav-height - $height)/2;
+        font-size: 16px;
+        line-height: $height;
+    }
+}
+
+/* Content */
+.splash {
+    z-index: 1;
+    width: 100%; height: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+
+    .blurb {
+        width: 100%;
+        // padding: 0 $nav-padding;
+        padding: $nav-height/6 $nav-padding 0 $nav-padding;
+        max-width: $blurb-width;
+        text-align: center;
+
+        img {
+            width: 148px;
+        }
+        h1 {
+            padding-top: 30px;
+            font-size: 28px;
+            font-family: Gotham Bold;
+            letter-spacing: 0.1em;
+        }
+        p {
+            padding-top: 16px;
+            font-size: 24px;
+            // font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0.05em;
+
+            .highlight {
+                color: $primary-peach;
+                // font-weight: 600;
+            }
+        }
+        .cta {
+            @extend .button;
+
+            width: 170px; height: 42px;
+            margin: 20px auto 0 auto;
+            display: block;
+            font-size: 14px;
+            line-height: 42px;
+            visibility: hidden;
+        }
+    }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 678px) {
+    body {
+        .nav {
+            .countdown {
+                .timer {
+                    width: 140px;
+
+                    .unit {
+                        width: 17px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .cta {
+                visibility: hidden;
+            }
+        }
+        .splash {
+            .blurb {
+                max-width: $blurb-width - 200px;
+
+                img {
+                    width: 106px;
+                }
+                h1 {
+                    font-size: 22px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0em;
+                }
+                .cta {
+                    visibility: visible;
+                    letter-spacing: 0em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 678px) {
+    body {
+        .splash {
+            .blurb {
+                max-width: $blurb-width - 80px;
+
+                img {
+                    width: 132px;
+                }
+                h1 {
+                    font-size: 26px;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}

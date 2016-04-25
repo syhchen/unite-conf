@@ -1,0 +1,98 @@
+@import 'main';
+@import 'variables';
+
+body {
+    background: $primary-white;
+}
+
+/* About */
+.about-content {
+    width: 100%;
+    padding-top: $nav-height;
+
+    .info {
+        width: $content-inner-width;
+        margin-left: (100 - $content-inner-width) / 2;
+        margin-right: (100 - $content-inner-width) / 2;
+        color: #444;
+
+        .highlight {
+            color: $primary-peach;
+        }
+
+        h1, h2 {
+            padding: 0 0 25px 0;
+            font-size: 48px;
+            font-family: Gotham Bold;
+        }
+
+        p {
+            padding: 14px 0;
+            font-size: 18px;
+            line-height: 26px;
+
+            .bold {
+                font-family: Gotham Bold;
+            }
+            .highlight {
+                font-family: Gotham Bold;
+                color: $primary-peach;
+            }
+            &.shout {
+                font-size: 28px;
+                font-family: Gotham Bold;
+                line-height: 36px;
+            }
+            &.quote {
+                width: 80%;
+                padding: 48px 10%;
+                font-size: 24px;
+                font-style: italic;
+                text-align: center;
+                line-height: 32px;
+            }
+            &.bold {
+                font-family: Gotham Bold;
+            }
+        }
+
+        ul.orgs {
+            padding: 20px 0 20px 40px;
+            list-style: circle;
+            font-size: 22px;
+            line-height: 36px;
+        }
+
+        ul.blocks {
+            padding: 42px 0;
+            text-align: center;
+            li {
+                padding: 40px 0;
+
+                h2 {
+                    padding: 0;
+                    text-transform: uppercase;
+                }
+                p {
+                    width: 480px;
+                    max-width: 100%;
+                    margin: 0 auto;
+                    padding: 20px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+.section-break {
+    width: 50%;
+    margin: 50px 25%;
+}
+.section-break.wide {
+    width: 100%;
+    margin: 50px 0;
+}
+.section-break-small {
+    width: 30%;
+    margin: 50px 35% 0 35%;
+}

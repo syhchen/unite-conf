@@ -1,100 +1,16 @@
 @import 'compass/reset';
 @import "compass/css3";
+@import 'variables';
 
-// @font-face {
-//   font-family: 'Gidole';
-//   src: url('../fonts/Gidole-Regular.ttf') format('truetype');
-// }
 @font-face {
   font-family: 'Gotham';
   src: url('../fonts/GOTHAM-LIGHT.TTF') format('truetype');
 }
+
 @font-face {
-  font-family: 'Gotham Bold';
+  font-family: 'Gotham';
   src: url('../fonts/GOTHAM-BOLD.TTF') format('truetype');
-}
-
-$background: #4577bb;
-$body-color: #fff;
-$highlight-color: #fa8c7c;
-
-$nav-height: 120px;
-$nav-padding: 26px;
-
-$button-background: #eb6149;
-$button-shadow: #d04632;
-$button-padding: 24px;
-$button-radius: 10px;
-
-$blurb-width: 536px;
-
-/* Media Queries */
-@media only screen and (max-width: 678px) {
-    body {
-        .nav {
-            .countdown {
-                .timer {
-                    width: 140px;
-
-                    .unit {
-                        width: 17px;
-                        font-size: 14px;
-                    }
-                }
-            }
-            .cta {
-                visibility: hidden;
-            }
-        }
-        .content {
-            .blurb {
-                max-width: $blurb-width - 200px;
-
-                img {
-                    width: 106px;
-                }
-                h1 {
-                    font-size: 22px;
-                }
-                p {
-                    font-size: 16px;
-                    line-height: 22px;
-                    letter-spacing: 0em;
-                }
-                .cta {
-                    visibility: visible;
-                    letter-spacing: 0em;
-                }
-            }
-        }
-        .about-content {
-            .info {
-                padding: 60px 10%;
-            }
-        }
-
-    }
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 678px) {
-    body {
-        .content {
-            .blurb {
-                max-width: $blurb-width - 80px;
-
-                img {
-                    width: 132px;
-                }
-                h1 {
-                    font-size: 26px;
-                }
-                p {
-                    font-size: 20px;
-                    line-height: 26px;
-                }
-            }
-        }
-    }
+  font-weight: bold;
 }
 
 /* General */
@@ -103,69 +19,41 @@ html, body {
     min-height: 568px;
 }
 
+h1 {
+    font-size: $h1-font-size;
+    font-weight: bold;
+    line-height: $h1-line-height;
+}
+
+p {
+    font-size: $p-font-size;
+    line-height: $p-line-height;
+}
+
 body {
     position: relative;
-    background: $background;
-    color: $body-color;
-    font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+    background: $primary-blue;
+    color: $primary-white;
+    font-family: 'Gotham', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
 }
 
 .loading {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: $background;
+    background: $primary-blue;
     z-index: 999;
-    // visibility: hidden;
+
+    @if $wait-for-js == true {
+        visibility: hidden;
+    }
+    @else {
+        visibility: visible;
+    }
 }
 
-.button {
-    padding: 0 $button-padding;
-    border-radius: $button-radius;
-    box-shadow: 0 5px 0 $button-shadow;
-    background: $button-background;
-    color: $body-color;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-}
-
-.cta {
-    @extend .button;
-}
-
-/* Background */
-.goldengate {
-    width: 38%; height: 58%;
-    position: absolute;
-    right: 0; bottom: 0;
-    background-image: url('../img/goldengate-cropped.png');
-    background-size: contain;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-}
-
-.fog-left {
-    width: 42%; height: 16%;
-    position: absolute;
-    left: 0; bottom: 0;
-    background-image: url('../img/fog-left-cropped.png');
-    background-size: contain;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-}
-
-.fog-right {
-    width: 46%; height: 16%;
-    position: absolute;
-    right: 0; bottom: 0;
-    background-image: url('../img/fog-right-cropped.png');
-    background-size: contain;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-}
-
-/* Nav */
+/* Header */
 .nav {
-    z-index: 2;
     width: 100%; height: $nav-height;
     padding: 0 $nav-padding;
     position: absolute;
@@ -173,71 +61,30 @@ body {
     box-sizing: border-box;
     line-height: $nav-height;
     overflow-x: hidden;
-    background: $background;
+    background: $primary-blue;
+    box-shadow: 0 $nav-shadow-height 0 darken($primary-blue, 5%);
+    z-index: 2;
 
     * {
         display: inline-block;
         vertical-align: middle;
     }
 
+    // Unite wordmark
     img {
         height: $nav-height/4;
     }
 
-    li {
-        margin-left: $nav-padding;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-
-        a {
-            color: $body-color;
-            font-size: 18px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.24em;
-            text-decoration: none;
-            line-height: 18px;
-        }
-    }
-
+    // countdown timer
     .countdown {
         padding-left: $nav-padding*2/3;
+        position: absolute;
+        top: 0;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 0;
+        font-size: 0; // so inline-block elements sit flush
         text-align: center;
         text-transform: uppercase;
         overflow-x: hidden;
-        position: absolute;
-        top: 0;
-
-        /* old timer styles */
-        // .time-unit {
-        //     $label-spacing: 2px;
-        //     $label-height: 32px;
-        //
-        //     width: 58px;
-        //     margin-top: $label-height;
-        //     margin-right: 8px;
-        //     display: inline-block;
-        //     line-height: 48px;
-        //
-        //     .value, .label {
-        //         padding-left: $label-spacing/2;
-        //         display: block;
-        //         letter-spacing: $label-spacing;
-        //     }
-        //
-        //     .value {
-        //         border-radius: 6px;
-        //         font-weight: 600;
-        //         font-size: 20px;
-        //         background: $body-color;
-        //         color: $background;
-        //     }
-        //     .label {
-        //         font-size: 12px;
-        //         line-height: $label-height;
-        //     }
-        // }
 
         .timer {
             width: 210px;
@@ -250,7 +97,7 @@ body {
                 width: 44px;
                 font-size: 18px;
                 font-weight: 600;
-                color: $body-color;
+                color: $primary-white;
             }
             .separator {
                 width: auto;
@@ -259,216 +106,55 @@ body {
     }
 
     .cta {
-        $height: $nav-height/2.1;
+        @extend .button;
+        $height: $nav-height/2.2;
 
         height: $height;
         position: absolute;
-        right: $nav-padding; top: ($nav-height - $height)/2;
+        top: ($nav-height - $height)/2; right: $nav-padding;
         font-size: 16px;
         line-height: $height;
     }
 }
 
-/* Content */
 .content {
-    z-index: 1;
-    width: 100%; height: 100%;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    @include align-items(center);
-    @include justify-content(center);
-
-    .blurb {
-        width: 100%;
-        // padding: 0 $nav-padding;
-        padding: $nav-height/6 $nav-padding 0 $nav-padding;
-        max-width: $blurb-width;
-        text-align: center;
-
-        img {
-            width: 148px;
-        }
-        h1 {
-            padding-top: 30px;
-            font-size: 28px;
-            font-family: Gotham Bold;
-            letter-spacing: 0.1em;
-        }
-        p {
-            padding-top: 16px;
-            font-size: 24px;
-            // font-weight: 400;
-            line-height: 30px;
-            letter-spacing: 0.05em;
-
-            .highlight {
-                color: $highlight-color;
-                // font-weight: 600;
-            }
-        }
-        .cta {
-            width: 170px; height: 42px;
-            margin: 20px auto 0 auto;
-            display: block;
-            font-size: 14px;
-            line-height: 42px;
-            visibility: hidden;
-        }
-    }
-}
-
-.itinerary-content {
     width: 100%;
-    padding-top: $nav-height;
-    padding-bottom: $nav-height;
-    text-align: center;
-    background: #fff;
-    color: #444;
+    padding-top: $nav-height + $nav-shadow-height + $content-padding-vert;
+    padding-bottom: $content-padding-vert;
+    background: $primary-white;
+    color: $primary-black;
 
-    .shading {
-        width: 100%; height: 6px;
-        background: rgba(0,0,0,0.2);
-    }
-
-    .info {
-        // padding: 60px 20% 100px 20%;
-        background: $body-color;
-        text-align: left;
-        color: #444;
-
-        h1 {
-            padding: 0 0 25px 0;
-            font-size: 48px;
-            font-family: Gotham Bold;
-        }
-        //
-        // p {
-        //     padding: 14px 0;
-        //     font-size: 18px;
-        //     line-height: 26px;
-        //
-        //     .bold {
-        //         font-family: Gotham Bold;
-        //     }
-        //     .highlight {
-        //         font-family: Gotham Bold;
-        //         color: $highlight-color;
-        //     }
-        //     &.shout {
-        //         font-size: 28px;
-        //         font-family: Gotham Bold;
-        //         line-height: 36px;
-        //     }
-        //     &.quote {
-        //         width: 80%;
-        //         padding: 48px 10%;
-        //         font-size: 24px;
-        //         font-style: italic;
-        //         text-align: center;
-        //         line-height: 32px;
-        //     }
-        //     &.bold {
-        //         font-family: Gotham Bold;
-        //     }
-        // }
+    &>section {
+        width: $content-inner-width;
+        margin-left: (100 - $content-inner-width) / 2;
+        margin-right: (100 - $content-inner-width) / 2;
+        position: relative;
     }
 }
 
-/* About */
-.about-content {
-    width: 100%;
-    padding-top: $nav-height;
-
-    .shading {
-        width: 100%; height: 6px;
-        background: rgba(0,0,0,0.2);
+/* Media Queries */
+@media only screen and (max-width: 678px) {
+    .content>section {
+        width: $content-inner-width-mobile;
+        margin-left: (100 - $content-inner-width-mobile) / 2;
+        margin-right: (100 - $content-inner-width-mobile) / 2;
     }
 
-    .info {
-        padding: 60px 20% 100px 20%;
-        background: $body-color;
-        color: #444;
-
-        .highlight {
-            color: $highlight-color;
-        }
-
-        h1, h2 {
-            padding: 0 0 25px 0;
-            font-size: 48px;
-            font-family: Gotham Bold;
-        }
-
-        p {
-            padding: 14px 0;
-            font-size: 18px;
-            line-height: 26px;
-
-            .bold {
-                font-family: Gotham Bold;
-            }
-            .highlight {
-                font-family: Gotham Bold;
-                color: $highlight-color;
-            }
-            &.shout {
-                font-size: 28px;
-                font-family: Gotham Bold;
-                line-height: 36px;
-            }
-            &.quote {
-                width: 80%;
-                padding: 48px 10%;
-                font-size: 24px;
-                font-style: italic;
-                text-align: center;
-                line-height: 32px;
-            }
-            &.bold {
-                font-family: Gotham Bold;
-            }
-        }
-
-        ul.orgs {
-            padding: 20px 0 20px 40px;
-            list-style: circle;
-            font-size: 22px;
-            line-height: 36px;
-        }
-
-        ul.blocks {
-            padding: 42px 0;
-            text-align: center;
-            li {
-                padding: 40px 0;
-
-                h2 {
-                    padding: 0;
-                    text-transform: uppercase;
-                }
-                p {
-                    width: 480px;
-                    max-width: 100%;
-                    margin: 0 auto;
-                    padding: 20px 0 0 0;
-                }
-            }
+    // TODO: refactor about page
+    .about-content {
+        .info {
+            width: $content-inner-width-mobile !important;
+            margin-left: (100 - $content-inner-width-mobile) / 2 !important;
+            margin-right: (100 - $content-inner-width-mobile) / 2 !important;
         }
     }
-}
 
-.section-break {
-    width: 50%;
-    margin: 50px 25%;
-}
-.section-break.wide {
-    width: 100%;
-    margin: 50px 0;
-}
-.section-break-small {
-    width: 30%;
-    margin: 50px 35% 0 35%;
+    // TODO: deal with legend and caption in a smart way
+    .legend {
+        visibility: hidden;
+    }
+
+    .caption {
+        visibility: hidden;
+    }
 }

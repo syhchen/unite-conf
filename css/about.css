@@ -234,3 +234,111 @@ body {
     visibility: hidden;
   }
 }
+/* line 4, ../sass/about.scss */
+body {
+  background: #fff;
+}
+
+/* About */
+/* line 9, ../sass/about.scss */
+.about-content {
+  width: 100%;
+  padding-top: 120px;
+}
+/* line 13, ../sass/about.scss */
+.about-content .info {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: #444;
+}
+/* line 19, ../sass/about.scss */
+.about-content .info .highlight {
+  color: #fa8c7c;
+}
+/* line 23, ../sass/about.scss */
+.about-content .info h1, .about-content .info h2 {
+  padding: 0 0 25px 0;
+  font-size: 48px;
+  font-family: Gotham Bold;
+}
+/* line 29, ../sass/about.scss */
+.about-content .info p {
+  padding: 14px 0;
+  font-size: 18px;
+  line-height: 26px;
+}
+/* line 34, ../sass/about.scss */
+.about-content .info p .bold {
+  font-family: Gotham Bold;
+}
+/* line 37, ../sass/about.scss */
+.about-content .info p .highlight {
+  font-family: Gotham Bold;
+  color: #fa8c7c;
+}
+/* line 41, ../sass/about.scss */
+.about-content .info p.shout {
+  font-size: 28px;
+  font-family: Gotham Bold;
+  line-height: 36px;
+}
+/* line 46, ../sass/about.scss */
+.about-content .info p.quote {
+  width: 80%;
+  padding: 48px 10%;
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+  line-height: 32px;
+}
+/* line 54, ../sass/about.scss */
+.about-content .info p.bold {
+  font-family: Gotham Bold;
+}
+/* line 59, ../sass/about.scss */
+.about-content .info ul.orgs {
+  padding: 20px 0 20px 40px;
+  list-style: circle;
+  font-size: 22px;
+  line-height: 36px;
+}
+/* line 66, ../sass/about.scss */
+.about-content .info ul.blocks {
+  padding: 42px 0;
+  text-align: center;
+}
+/* line 69, ../sass/about.scss */
+.about-content .info ul.blocks li {
+  padding: 40px 0;
+}
+/* line 72, ../sass/about.scss */
+.about-content .info ul.blocks li h2 {
+  padding: 0;
+  text-transform: uppercase;
+}
+/* line 76, ../sass/about.scss */
+.about-content .info ul.blocks li p {
+  width: 480px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+}
+
+/* line 87, ../sass/about.scss */
+.section-break {
+  width: 50%;
+  margin: 50px 25%;
+}
+
+/* line 91, ../sass/about.scss */
+.section-break.wide {
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* line 95, ../sass/about.scss */
+.section-break-small {
+  width: 30%;
+  margin: 50px 35% 0 35%;
+}

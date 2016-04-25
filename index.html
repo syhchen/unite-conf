@@ -7,7 +7,7 @@
         <meta name="description" content="A three-day conference in San Francisco where top collegiate entrepreneurial organizations from across the nation gather to collaborate and learn.">
         <meta name="keywords" content="Spark SC, USC, Unite, UniteConf, Entrepreneurship">
         <link rel="icon" href="favicon.ico">
-        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/index.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
         <script type="text/javascript">
             var SEC_IN_MIN = 60; // in sec
@@ -16,22 +16,45 @@
             var REFRESH = 1; // in sec
             var FADE = 0.3; // in sec
 
-            var timeLeft = Math.abs(new Date(2016, 6, 17) - new Date()) / 1000; // in sec
-            if(timeLeft < 0) {
-                // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
-            }
-            else {
-                this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
-                (function renderLoop(){
-                    $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
-                    $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
-                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
-                    $("#secs").html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+            var timeLeft; // in sec
 
-                    if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
-                    this.timeLeft--;
-                    setTimeout(renderLoop, this.REFRESH*1000);
-                })();
+            $(document).ready(function() {
+                init();
+                main();
+                countdown();
+            });
+
+            function init() {
+                timeLeft = Math.abs(new Date(2016, 6, 15) - new Date()) / 1000;
+            }
+
+            function main() {
+
+            }
+
+            function countdown() {
+                if(timeLeft < 0) {
+                    // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
+                }
+                else {
+                    var days = $("#days");
+                    var hours = $("#hrs");
+                    var minutes = $("#min");
+                    var seconds = $("#secs");
+                    var loading = $("#loading");
+
+                    this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
+                    (function renderLoop(){
+                        days.html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                        hours.html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
+                        minutes.html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                        seconds.html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+
+                        if(loading.is(":visible")) {loading.fadeOut(this.FADE*1000)}
+                        this.timeLeft--;
+                        setTimeout(renderLoop, this.REFRESH*1000);
+                    })();
+                }
             }
         </script>
     </head>
@@ -65,18 +88,14 @@
                     <div class="label">Min</div>
                 </div> -->
             </div>
-            <!-- <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sponsor</a></li>
-            </ul> -->
-            <a href="about.html" class="cta">Learn more about Unite</a>
+            <a href="itinerary.html" class="cta">Check out our itinerary</a>
         </nav>
-        <section class="content">
+        <section class="splash">
             <div class="blurb">
                 <img src="img/unite.png" alt="Unite">
                 <h1>July 15-17, 2016</h1>
                 <p>A three-day conference in <span class="highlight">San Francisco</span> where top collegiate entrepreneurial organizations from across the nation gather to <span class="highlight">collaborate</span> and <span class="highlight">learn</span>.</p>
-                <a href="about.html" class="cta">Learn more about Unite</a>
+                <a href="itinerary.html" class="cta">Check out our itinerary</a>
             </div>
         </section>
     </body>

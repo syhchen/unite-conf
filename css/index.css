@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* Variables */
 /* Classes */
 /* line 54, ../sass/variables.scss */
-.button, .nav .cta {
+.button, .nav .cta, .splash .blurb .cta {
   padding: 0 24px;
   border-radius: 10px;
   box-shadow: 0 5px 0 #e63d20;
@@ -232,5 +232,244 @@ body {
   /* line 157, ../sass/main.scss */
   .caption {
     visibility: hidden;
+  }
+}
+/* line 4, ../sass/index.scss */
+.nav {
+  background: none !important;
+  box-shadow: none;
+}
+
+/* Background */
+/* line 10, ../sass/index.scss */
+.goldengate {
+  width: 38%;
+  height: 58%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/goldengate-cropped.png");
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+/* line 20, ../sass/index.scss */
+.fog-left {
+  width: 42%;
+  height: 16%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url("../img/fog-left-cropped.png");
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+/* line 30, ../sass/index.scss */
+.fog-right {
+  width: 46%;
+  height: 16%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/fog-right-cropped.png");
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+/* Nav */
+/* line 41, ../sass/index.scss */
+.nav {
+  z-index: 2;
+  width: 100%;
+  height: 120px;
+  padding: 0 26px;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  line-height: 120px;
+  overflow-x: hidden;
+  background: #4577bb;
+}
+/* line 52, ../sass/index.scss */
+.nav * {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 57, ../sass/index.scss */
+.nav img {
+  height: 30px;
+}
+/* line 61, ../sass/index.scss */
+.nav li {
+  margin-left: 26px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+/* line 65, ../sass/index.scss */
+.nav li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  text-decoration: none;
+  line-height: 18px;
+}
+/* line 76, ../sass/index.scss */
+.nav .countdown {
+  padding-left: 17.33333px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 0;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  /* old timer styles */
+}
+/* line 116, ../sass/index.scss */
+.nav .countdown .timer {
+  width: 210px;
+  display: inline-block;
+  line-height: 48px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+}
+/* line 123, ../sass/index.scss */
+.nav .countdown .timer .unit {
+  width: 44px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+/* line 129, ../sass/index.scss */
+.nav .countdown .timer .separator {
+  width: auto;
+}
+/* line 135, ../sass/index.scss */
+.nav .cta {
+  height: 57.14286px;
+  position: absolute;
+  right: 26px;
+  top: 31.42857px;
+  font-size: 16px;
+  line-height: 57.14286px;
+}
+
+/* Content */
+/* line 148, ../sass/index.scss */
+.splash {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 159, ../sass/index.scss */
+.splash .blurb {
+  width: 100%;
+  padding: 20px 26px 0 26px;
+  max-width: 536px;
+  text-align: center;
+}
+/* line 166, ../sass/index.scss */
+.splash .blurb img {
+  width: 148px;
+}
+/* line 169, ../sass/index.scss */
+.splash .blurb h1 {
+  padding-top: 30px;
+  font-size: 28px;
+  font-family: Gotham Bold;
+  letter-spacing: 0.1em;
+}
+/* line 175, ../sass/index.scss */
+.splash .blurb p {
+  padding-top: 16px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+}
+/* line 182, ../sass/index.scss */
+.splash .blurb p .highlight {
+  color: #fa8c7c;
+}
+/* line 187, ../sass/index.scss */
+.splash .blurb .cta {
+  width: 170px;
+  height: 42px;
+  margin: 20px auto 0 auto;
+  display: block;
+  font-size: 14px;
+  line-height: 42px;
+  visibility: hidden;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 678px) {
+  /* line 205, ../sass/index.scss */
+  body .nav .countdown .timer {
+    width: 140px;
+  }
+  /* line 208, ../sass/index.scss */
+  body .nav .countdown .timer .unit {
+    width: 17px;
+    font-size: 14px;
+  }
+  /* line 214, ../sass/index.scss */
+  body .nav .cta {
+    visibility: hidden;
+  }
+  /* line 219, ../sass/index.scss */
+  body .splash .blurb {
+    max-width: 336px;
+  }
+  /* line 222, ../sass/index.scss */
+  body .splash .blurb img {
+    width: 106px;
+  }
+  /* line 225, ../sass/index.scss */
+  body .splash .blurb h1 {
+    font-size: 22px;
+  }
+  /* line 228, ../sass/index.scss */
+  body .splash .blurb p {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0em;
+  }
+  /* line 233, ../sass/index.scss */
+  body .splash .blurb .cta {
+    visibility: visible;
+    letter-spacing: 0em;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 678px) {
+  /* line 245, ../sass/index.scss */
+  body .splash .blurb {
+    max-width: 456px;
+  }
+  /* line 248, ../sass/index.scss */
+  body .splash .blurb img {
+    width: 132px;
+  }
+  /* line 251, ../sass/index.scss */
+  body .splash .blurb h1 {
+    font-size: 26px;
+  }
+  /* line 254, ../sass/index.scss */
+  body .splash .blurb p {
+    font-size: 20px;
+    line-height: 26px;
   }
 }

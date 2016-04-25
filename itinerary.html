@@ -7,7 +7,6 @@
         <meta name="description" content="A three-day conference in San Francisco where top collegiate entrepreneurial organizations from across the nation gather to collaborate and learn.">
         <meta name="keywords" content="Spark SC, USC, Unite, UniteConf, Entrepreneurship">
         <link rel="icon" href="favicon.ico">
-        <link href="css/main.css" rel="stylesheet" type="text/css">
         <link href="css/itinerary.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
         <script type="text/javascript">
@@ -17,22 +16,57 @@
             var REFRESH = 1; // in sec
             var FADE = 0.3; // in sec
 
-            var timeLeft = Math.abs(new Date(2016, 6, 15) - new Date()) / 1000; // in sec
-            if(timeLeft < 0) {
-                // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
-            }
-            else {
-                this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
-                (function renderLoop(){
-                    $("#days").html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
-                    $("#hrs").html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
-                    $("#min").html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
-                    $("#secs").html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+            var timeDivs;
+            var dividerDivs;
+            var timeLeft; // in sec
 
-                    if($("#loading").is(":visible")) {$("#loading").fadeOut(this.FADE*1000)}
-                    this.timeLeft--;
-                    setTimeout(renderLoop, this.REFRESH*1000);
-                })();
+            $(document).ready(function() {
+                init();
+                main();
+                countdown();
+            });
+
+            $(window).resize(function() {
+                main();
+            });
+
+            function init() {
+                timeDivs = $(".time>span");
+                dividerDivs = $(".divider");
+                timeLeft = Math.abs(new Date(2016, 6, 15) - new Date()) / 1000;
+            }
+
+            function main() {
+                alignTimes(timeDivs, dividerDivs);
+            }
+
+            function countdown() {
+                if(timeLeft < 0) {
+                    // it's the day of the event! hopefully the page isn't just a countdown at this point. ;)
+                }
+                else {
+                    var days = $("#days");
+                    var hours = $("#hrs");
+                    var minutes = $("#min");
+                    var seconds = $("#secs");
+                    var loading = $("#loading");
+
+                    this.timeLeft += this.SEC_IN_MIN; // we don't render sec, so account for rounding
+                    (function renderLoop(){
+                        days.html(Math.floor(this.timeLeft/this.SEC_IN_DAY));
+                        hours.html(Math.floor((this.timeLeft%this.SEC_IN_DAY)/this.SEC_IN_HOUR));
+                        minutes.html(Math.floor(((this.timeLeft%this.SEC_IN_DAY)%this.SEC_IN_HOUR)/this.SEC_IN_MIN));
+                        seconds.html(Math.floor(this.timeLeft%this.SEC_IN_MIN));
+
+                        if(loading.is(":visible")) {loading.fadeOut(this.FADE*1000)}
+                        this.timeLeft--;
+                        setTimeout(renderLoop, this.REFRESH*1000);
+                    })();
+                }
+            }
+
+            function alignTimes(timeDivs, dividerDivs) {
+                timeDivs.css({"right": dividerDivs.width()});
             }
         </script>
     </head>
@@ -50,33 +84,22 @@
                     <div class="unit separator">:</div>
                     <div class="unit" id="secs"></div>
                 </div>
-                <!-- <div class="time-unit">
-                    <div class="value" id="days">0</div>
-                    <div class="label">Days</div>
-                </div>
-                <div class="time-unit">
-                    <div class="value" id="hrs">0</div>
-                    <div class="label">Hrs</div>
-                </div>
-                <div class="time-unit">
-                    <div class="value" id="min">0</div>
-                    <div class="label">Min</div>
-                </div> -->
             </div>
-            <!-- <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sponsor</a></li>
-            </ul> -->
             <a href="index.html" class="cta">Go back home</a>
         </nav>
-        <section class="itinerary-content">
-            <div class="shading"></div>
-            <div class="info">
+        <section class="content">
+            <section class="itinerary-preface">
                 <img src="img/uw-asset1.png" alt="Unite" class="section-break-small">
-                <!-- <h1>Trip Itinerary</h1> -->
-                <!-- <p></p> -->
-            </div>
-            <section class="itinerary">
+                <h1>The Itinerary</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section class="itinerary-info">
+                <ul class="legend">
+                    <!-- <li class="title">Locations</li> -->
+                    <li class="house">House</li>
+                    <li class="studio">Studio</li>
+                    <li class="sf">Out in SF</li>
+                </ul>
                 <ul class="timeline">
                     <!-- DAY ONE: FRIDAY -->
                     <li class="segment day">
@@ -171,7 +194,7 @@
                             <div class="line"></div>
                         </div>
                         <div class="info">
-                            <div class="tba">TBA April 25</div>
+                            <div class="tba">TBA</div>
                             <div class="description">Company tour and lunch</div>
                         </div>
                     </li>
@@ -182,7 +205,7 @@
                             <div class="line"></div>
                         </div>
                         <div class="info">
-                            <div class="tba">TBA April 25</div>
+                            <div class="tba">TBA</div>
                             <div class="description">Speaker</div>
                         </div>
                     </li>
@@ -286,11 +309,6 @@
                             </div>
                         </div>
                     </li>
-                </ul>
-                <ul class="legend">
-                    <li class="house">House</li>
-                    <li class="studio">Studio</li>
-                    <li class="sf">Out in SF</li>
                 </ul>
             </section>
         </section>
