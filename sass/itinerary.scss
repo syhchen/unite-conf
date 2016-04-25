@@ -42,6 +42,11 @@ body {
     line-height: 42px;
     z-index: 1;
 
+    &.sticky {
+        position: fixed;
+        right: (100 - $content-inner-width) / 2;
+    }
+
     li.title {
         font-size: 18px;
         font-style: italic;
@@ -180,7 +185,7 @@ body {
 
         &>.info {
             width: $segment-info-width;
-            font-family: 'Gotham Bold';
+            font-weight: bold;
 
             &>.dayofweek {
                 font-size: 26px;
@@ -211,11 +216,12 @@ body {
                 position: relative;
 
                 &>.caption {
-                    width: 200px; height: 42px;
+                    width: 170px; height: 42px;
                     padding-top: 2px; /* visual tweak */
                     position: absolute;
-                    top: 0; right: -200px;
+                    top: 0; right: -170px;
                     background: #eaeaea;
+                    font-size: 12px;
                     text-align: center;
                     text-transform: uppercase;
                     line-height: 42px;

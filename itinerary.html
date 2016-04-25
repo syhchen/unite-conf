@@ -18,26 +18,56 @@
 
             var timeDivs;
             var dividerDivs;
+            var timelineDiv;
+            var legendDiv;
+            var legendHouse;
+            var legendStudio;
+            var legendSF;
             var timeLeft; // in sec
 
             $(document).ready(function() {
                 init();
-                main();
+                resize();
+                scroll();
                 countdown();
             });
 
             $(window).resize(function() {
-                main();
+                resize();
+            });
+
+            $(window).scroll(function() {
+                scroll();
             });
 
             function init() {
                 timeDivs = $(".time>span");
                 dividerDivs = $(".divider");
+                timelineDiv = $("#timeline");
+                legendDiv = $(".legend");
+                legendHouse = $("#house");
+                legendStudio = $("#studio");
+                legendSF = $("#sf");
                 timeLeft = Math.abs(new Date(2016, 6, 15) - new Date()) / 1000;
             }
 
-            function main() {
+            function resize() {
                 alignTimes(timeDivs, dividerDivs);
+            }
+
+            function scroll() {
+                // at breakpoint
+                if($(window).scrollTop() >= timelineDiv.offset().top && !legendDiv.hasClass("sticky")) {
+                    legendDiv.addClass("sticky");
+                    // setOpacity(legendHouse);
+                }
+                // above breakpoint
+                else if($(window).scrollTop() < timelineDiv.offset().top && legendDiv.hasClass("sticky")) {
+                    legendDiv.removeClass("sticky");
+                    // legendHouse.css({"opacity": 1});
+                    // legendStudio.css({"opacity": 1});
+                    // legendSF.css({"opacity": 1});
+                }
             }
 
             function countdown() {
@@ -68,6 +98,14 @@
             function alignTimes(timeDivs, dividerDivs) {
                 timeDivs.css({"right": dividerDivs.width()});
             }
+
+            function setOpacity(activeLocation) {
+                legendHouse.css({"opacity": 0.4});
+                legendStudio.css({"opacity": 0.4});
+                legendSF.css({"opacity": 0.4});
+
+                activeLocation.css({"opacity": 1});
+            }
         </script>
     </head>
     <body>
@@ -96,13 +134,13 @@
             <section class="itinerary-info">
                 <ul class="legend">
                     <!-- <li class="title">Locations</li> -->
-                    <li class="house">House</li>
-                    <li class="studio">Studio</li>
-                    <li class="sf">Out in SF</li>
+                    <li class="house" id="house">House</li>
+                    <li class="studio" id="studio">Studio</li>
+                    <li class="sf" id="sf">Out in SF</li>
                 </ul>
-                <ul class="timeline">
+                <ul class="timeline" id="timeline">
                     <!-- DAY ONE: FRIDAY -->
-                    <li class="segment day">
+                    <li class="segment day" id="friday">
                         <div class="time dummy"></div>
                         <div class="divider dummy">
                             <div class="category"></div>
@@ -153,7 +191,7 @@
                         </div>
                     </li>
                     <!-- DAY TWO: SATURDAY -->
-                    <li class="segment day">
+                    <li class="segment day" id="saturday">
                         <div class="time dummy"></div>
                         <div class="divider dummy">
                             <div class="category"></div>
@@ -253,7 +291,7 @@
                         </div>
                     </li>
                     <!-- DAY THREE: SUNDAY -->
-                    <li class="segment day">
+                    <li class="segment day" id="sunday">
                         <div class="time dummy"></div>
                         <div class="divider dummy">
                             <div class="category"></div>
