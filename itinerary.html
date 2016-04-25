@@ -80,7 +80,7 @@
                             var nextObj = categories.slice(index + 1, index + 2);
                         }
                         // console.log(Math.floor(obj.offset().top) + ", " + $(window).scrollTop() + ", " + Math.floor(nextObj.offset().top));
-                        if(Math.floor(obj.offset().top) <= $(window).scrollTop() && $(window).scrollTop() < Math.floor(nextObj.offset().top)) {
+                        if(Math.floor(obj.offset().top) <= $(window).scrollTop() + 20 && $(window).scrollTop() + 20 < Math.floor(nextObj.offset().top)) {
                             if(obj.hasClass("house")) {
                                 setOpacity([legendHouse], [legendStudio, legendSF]);
                             }
@@ -121,7 +121,15 @@
             }
 
             function alignTimes(timeDivs, dividerDivs) {
-                timeDivs.css({"right": dividerDivs.width()});
+                // console.log($(window).width());
+                if($(window).width() > 678) {
+                    timeDivs.css({"right": dividerDivs.width()});
+                    timeDivs.css({"left": "auto"});
+                }
+                else {
+                    timeDivs.css({"right": "auto"});
+                    timeDivs.css({"left": dividerDivs.width()});
+                }
             }
 
             function setOpacity(activeLocations, inactiveLocations) {
@@ -155,7 +163,7 @@
             <section class="itinerary-preface">
                 <img src="img/uw-asset1.png" alt="Unite" class="section-break-small">
                 <h1>The Itinerary</h1>
-                <p>Unite brings like-minded students from leading entrepreneurial organizations across the nation to San Francisco for a weekend of growth. Attendees will engage in a discussion about their organization’s initiatives with the purpose of sharing insights and exploring opportunities for community impact and social enterprise.</p>
+                <p>Unite brings like-minded students from <span class="bold">leading entrepreneurial organizations</span> across the nation to San Francisco for a weekend of growth. Attendees will engage in a discussion about their organization’s initiatives with the purpose of sharing insights and exploring opportunities for community impact and social enterprise.</p>
             </section>
             <section class="itinerary-info">
                 <ul class="legend">
@@ -234,7 +242,7 @@
                             <div class="line"></div>
                         </div>
                         <div class="info">
-                            <div class="description">Head to downtown studio for breakfast</div>
+                            <div class="description">Head to SF studio for breakfast</div>
                             <div class="photo">
                                 <img src="img/itinerary/unite-assets-3.jpg" alt="Downtown Studio">
                                 <div class="caption studio">Our Studio Space</div>

@@ -38,6 +38,14 @@ body {
     font-size: 16px;
 }
 
+.bold {
+    font-weight: bold;
+}
+.highlight {
+    font-weight: bold;
+    color: $primary-peach;
+}
+
 .loading {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
@@ -123,6 +131,7 @@ body {
     padding-bottom: $content-padding-vert;
     background: $primary-white;
     color: $primary-black;
+    overflow: hidden;
 
     &>section {
         width: $content-inner-width;
@@ -153,12 +162,30 @@ body {
     .countdown {
         visibility: hidden;
     }
-    
+
     .legend {
         visibility: hidden;
     }
 
     .caption {
         visibility: hidden;
+    }
+
+    .timeline {
+
+        li.segment {
+
+            &>.time {
+
+                &>span {
+                    left: 0;
+                    text-align: left !important;
+                }
+            }
+
+            &>.info {
+                margin-top: 24px;
+            }
+        }
     }
 }
