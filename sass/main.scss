@@ -149,7 +149,11 @@ body {
         }
     }
 
-    // TODO: deal with legend and caption in a smart way
+    // TODO: deal with mobile in a smart way
+    .countdown {
+        visibility: hidden;
+    }
+    
     .legend {
         visibility: hidden;
     }
