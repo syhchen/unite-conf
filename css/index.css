@@ -417,7 +417,7 @@ body {
 .splash .blurb h1 {
   padding-top: 30px;
   font-size: 28px;
-  font-family: Gotham Bold;
+  font-weight: bold;
   letter-spacing: 0.1em;
 }
 /* line 175, ../sass/index.scss */

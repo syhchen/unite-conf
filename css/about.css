@@ -287,7 +287,7 @@ body {
 .about-content .info h1, .about-content .info h2 {
   padding: 0 0 25px 0;
   font-size: 48px;
-  font-family: Gotham Bold;
+  font-weight: bold;
 }
 /* line 29, ../sass/about.scss */
 .about-content .info p {
@@ -298,7 +298,7 @@ body {
 /* line 34, ../sass/about.scss */
 .about-content .info p.shout {
   font-size: 28px;
-  font-family: Gotham Bold;
+  font-weight: bold;
   line-height: 36px;
 }
 /* line 39, ../sass/about.scss */
@@ -312,7 +312,7 @@ body {
 }
 /* line 47, ../sass/about.scss */
 .about-content .info p.bold {
-  font-family: Gotham Bold;
+  font-weight: bold;
 }
 /* line 52, ../sass/about.scss */
 .about-content .info ul.orgs {
